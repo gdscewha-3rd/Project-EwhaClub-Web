@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors, fonts, BORDER_RADIUS, BOX_SHAD0W } from "styles/styleObj";
+import { colors, fonts, BORDER_RADIUS, BOX_SHADOW } from "styles/styleObj";
 
 const Title = styled.div`
   font-family: MinSans-Medium;
@@ -10,7 +10,7 @@ const Title = styled.div`
   width: 500px;
   height: 100px;
   border-radius: ${BORDER_RADIUS};
-  box-shadow: ${BOX_SHAD0W};
+  box-shadow: ${BOX_SHADOW};
 `;
 
 const Result = () => {

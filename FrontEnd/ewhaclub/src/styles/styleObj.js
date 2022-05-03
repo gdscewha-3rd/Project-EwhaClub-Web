@@ -59,4 +59,4 @@ export const fonts = {
 export const BORDER_RADIUS = "10px";
 
 /*박스 쉐도우*/
-export const BOX_SHAD0W = "0px 4px 4px rgba(0, 0, 0, 0.25)";
+export const BOX_SHADOW = "0px 4px 4px rgba(0, 0, 0, 0.25)";
