@@ -1,18 +1,17 @@
 // 색깔명 설정
-
-const colors = {
+export const colors = {
   white: {
     origin: "#FFFFFF",
   },
   black: {
     origin: "#000000",
-    border: rgba(0, 0, 0, 0.2),
+    light_origin: "rgba(0,0,0, 0.2)",
     grey: "#454545",
     light_grey_1: "#E9E8E8",
     light_grey_2: "#BBBBBB",
   },
   green: {
-    light: rgba(66, 255, 96, 0.1),
+    light: "rgba(66, 255, 96, 0.1)",
     ewha: "#00462A",
     origin: "#447931",
   },
@@ -39,9 +38,8 @@ const colors = {
   },
 };
 
-/*font 굵기 및 사이즈 지정*/
-
-const fonts = {
+/*font 굵기 및 사이즈*/
+export const fonts = {
   weight: {
     bold: 700,
     medium: 500,
@@ -57,4 +55,8 @@ const fonts = {
   },
 };
 
-const border_radius = "10px";
+/*테두리*/
+export const BORDER_RADIUS = "10px";
+
+/*박스 쉐도우*/
+export const BOX_SHAD0W = "0px 4px 4px rgba(0, 0, 0, 0.25)";

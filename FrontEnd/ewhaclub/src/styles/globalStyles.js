@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     padding: 0;
     margin: 0;
-    font-size: 62.5%;
+    /*font-size: 62.5%;*/
     font-family: Roboto;
   }
   * {
@@ -30,32 +30,35 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /*font*/
-  @font-face {
-    font-family: 'MinSans-Black';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Black.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'MinSans-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Bold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+      @font-face {
+        font-family: 'MinSans-Black';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Black.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'MinSans-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 
-@font-face {
-    font-family: 'MinSans-Medium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+    @font-face {
+        font-family: 'MinSans-Medium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 
-@font-face {
-    font-family: 'MinSans-Light';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+    @font-face {
+        font-family: 'MinSans-Light';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Light.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+  }
+
+  
+
 `;
 
 export default GlobalStyle;
