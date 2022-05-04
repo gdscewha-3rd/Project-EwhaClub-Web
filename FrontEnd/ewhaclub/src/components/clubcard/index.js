@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import heart from "asset/heart.png";
 import {
   colors,
   fonts,
@@ -38,12 +39,18 @@ const Clubcard = ({ club }) => {
         <Description>{club.short_description}</Description>
       </MainContainer>
       <SubContainer>
-        <Category color={category_color[club.category_name]}>
-          {club.category_name}
-        </Category>
-        <State color={state_color[club.is_recruiting]}>
-          {club.is_recruiting ? "모집중" : "모집마감"}
-        </State>
+        <InfoWrap>
+          <Category color={category_color[club.category_name]}>
+            {club.category_name}
+          </Category>
+          <State color={state_color[club.is_recruiting]}>
+            {club.is_recruiting ? "모집중" : "모집마감"}
+          </State>
+        </InfoWrap>
+        <LikesWrap>
+          <LikesImg src={heart} />
+          <LikesCnt>65</LikesCnt>
+        </LikesWrap>
       </SubContainer>
     </Card>
   );
@@ -77,9 +84,19 @@ const MainContainer = styled.div`
 const SubContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   border-top: 1px solid ${colors.black.light_origin};
   padding-top: 10px;
+`;
+const InfoWrap = styled.div`
+  display: flex;
+  flex-direction: row;
   line-height: 19px;
+`;
+
+const LikesWrap = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Title = styled.div`
@@ -123,4 +140,15 @@ const State = styled.span`
   background-color: ${(props) => props.color.color};
   border: 1px solid ${(props) => props.color.border};
   padding: 3px 6px;
+`;
+
+const LikesImg = styled.img`
+  height: 80%;
+  width: 80%;
+  object-fit: none;
+  padding-right: 5px;
+`;
+
+const LikesCnt = styled.p`
+  color: ${colors.black.origin};
 `;
