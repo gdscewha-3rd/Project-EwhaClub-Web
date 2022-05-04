@@ -14,6 +14,7 @@ const Title = styled.div`
 `;
 
 const Result = () => {
+  //주석추가
   return <Title> Result 페이지</Title>;
 };
 
