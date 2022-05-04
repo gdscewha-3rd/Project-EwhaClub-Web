@@ -45,6 +45,7 @@ const Clubcard = ({ club }) => {
           </Category>
           <State color={state_color[club.is_recruiting]}>
             {club.is_recruiting ? "모집중" : "모집마감"}
+            {/*모집 마감이 0*/}
           </State>
         </InfoWrap>
         <LikesWrap>
