@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { colors, fonts, BORDER_RADIUS, BOX_SHADOW } from "styles/styleObj";
+import Clubcard from "components/clubcard/index";
 
 const Title = styled.div`
   font-family: MinSans-Medium;
@@ -14,9 +15,12 @@ const Title = styled.div`
 `;
 
 const Result = () => {
-  //주석추가
-  //주석추가
-  return <Title> Result 페이지</Title>;
+  return (
+    <>
+      <Title> Result 페이지</Title>
+      <Clubcard />
+    </>
+  );
 };
 
 export default Result;
