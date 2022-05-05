@@ -22,14 +22,13 @@ const SearchInput = () => {
   return (
     <>
       <SearchForm onSubmit={onSubmit}>
+        <img src={searchicon} onClick={onSubmit} alt="searchImg" />
         <input
           value={input}
           onChange={onChange}
           type="text"
-          placeholder="벗들이 원하는 동아리가 있나요??"
+          placeholder="벗들이 원하는 동아리가 있나요?"
         />
-
-        <img src={searchicon} alt="searchImg" />
       </SearchForm>
     </>
   );
@@ -37,23 +36,30 @@ const SearchInput = () => {
 
 export default SearchInput;
 
-const SearchForm = style.div`     
-position: relative;
+const SearchForm = style.form`     
+display: flex;
+flex-direction:row;
 text-align: center;
 margin: 0 auto;
 width:60%;
-
+height:44px;
+border-radius:${BORDER_RADIUS_3};
+border : 1px solid ${colors.green.ewha};
+padding:5px 10px;
 input{
-    width:100%;
-    border-radius:${BORDER_RADIUS_3};
-    border : 1px solid ${colors.green.ewha};
-    height:44px;
+width:100%;
+    outline: none;
+  border:1px solid ${colors.white.origin};
+  border-radius:${BORDER_RADIUS_3};
+    color:${colors.green.ewha};
+    font-size:${fonts.size.regular};
+    font-weight:${fonts.weight.regular};
+   
 }
 img{
-    position: absolute;
-    left: 15px;
-    top:8px;
-    margin: 0;
+object-fit:none;
 }
+
+
 
 `;
