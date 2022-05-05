@@ -58,6 +58,7 @@ export const fonts = {
 /*테두리*/
 export const BORDER_RADIUS_1 = "10px";
 export const BORDER_RADIUS_2 = "20px";
+export const BORDER_RADIUS_3 = "25px";
 
 /*박스 쉐도우*/
 export const BOX_SHADOW = "0px 4px 4px rgba(0, 0, 0, 0.25)";
