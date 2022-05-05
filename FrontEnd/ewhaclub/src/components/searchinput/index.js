@@ -20,7 +20,7 @@ const SearchInput = () => {
     console.log(input);
   };
   return (
-    <>
+    <Section>
       <SearchForm onSubmit={onSubmit}>
         <img src={searchicon} onClick={onSubmit} alt="searchImg" />
         <input
@@ -30,11 +30,16 @@ const SearchInput = () => {
           placeholder="벗들이 원하는 동아리가 있나요?"
         />
       </SearchForm>
-    </>
+    </Section>
   );
 };
 
 export default SearchInput;
+
+const Section = style.div`  
+  margin: 45px 0 50px 0;
+  width:100%;
+`;
 
 const SearchForm = style.form`     
 display: flex;
