@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Main from "pages/main/index";
 import Detail from "pages/detail/index";
 import Result from "pages/result/index";
+import styled from "styled-components";
 
 function AppRouter() {
   return (

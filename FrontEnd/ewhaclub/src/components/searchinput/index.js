@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import searchicon from "asset/search.png";
 import style from "styled-components";
 import { colors, fonts, BORDER_RADIUS_3 } from "styles/styleObj";
+import { useHistory } from "react-router-dom";
 
 const SearchInput = () => {
+  const history = useHistory();
   const [input, setInput] = useState("");
   const onChange = (event) => {
     console.log("onChange");
@@ -18,7 +20,9 @@ const SearchInput = () => {
     event.preventDefault();
     console.log("onSubmit");
     console.log(input);
+    history.push(`/search?name=${input}`);
   };
+
   return (
     <Section>
       <SearchForm onSubmit={onSubmit}>
