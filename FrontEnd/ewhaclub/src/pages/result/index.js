@@ -1,15 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import Clubcard from "components/clubcard/index";
+import SearchInput from "components/searchinput";
 import dummy from "../../db/data.json";
 
 const Result = () => {
   return (
     <>
       <div> Result 페이지</div>
+      <SearchInput />
       <List>
-        {dummy.data.map((club) => (
-          <>{<Clubcard club={club} />}</>
+        {dummy.data.map((club, idx) => (
+          <>{<Clubcard key={idx} club={club} />}</>
         ))}
       </List>
     </>
