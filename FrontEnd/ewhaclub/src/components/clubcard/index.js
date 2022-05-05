@@ -127,7 +127,7 @@ const Category = styled.span`
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
   padding: 3px 6px;
-  margin-right: 14px;
+  margin-right: 8px;
 `;
 
 const State = styled.span`
