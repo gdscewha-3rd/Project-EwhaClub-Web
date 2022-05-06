@@ -9,6 +9,8 @@ import {
   BOX_SHADOW,
 } from "styles/styleObj";
 
+import { Link } from "react-router-dom";
+
 const category_color = {
   공연: `${colors.red.light}`,
   문화: `${colors.orange.origin}`,
@@ -33,11 +35,17 @@ const state_color = {
 const Clubcard = ({ club }) => {
   return (
     <Card>
-      <Thumbnail src={club.main_img_url} alt={club.name}></Thumbnail>
+      <Thumbnail>
+        <img src={club.main_img_url} alt={club.name}></img>
+      </Thumbnail>
+
       <MainContainer>
-        <Title>{club.name}</Title>
+        <Link to={`/club?name=${club.name}`}>
+          <Title>{club.name}</Title>
+        </Link>
         <Description>{club.short_description}</Description>
       </MainContainer>
+
       <SubContainer>
         <InfoWrap>
           <Category color={category_color[club.category_name]}>
@@ -50,7 +58,7 @@ const Clubcard = ({ club }) => {
         </InfoWrap>
         <LikesWrap>
           <LikesImg src={heart} />
-          <LikesCnt>65</LikesCnt>
+          {/*<LikesCnt>65</LikesCnt>*/}
         </LikesWrap>
       </SubContainer>
     </Card>
@@ -68,11 +76,15 @@ const Card = styled.div`
   padding: 15px;
 `;
 
-const Thumbnail = styled.img`
+const Thumbnail = styled.div`
   /*로고 : 512 x 288*/
   width: 100%;
   height: 50%;
   padding-bottom: 15px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const MainContainer = styled.div`
@@ -127,7 +139,7 @@ const Category = styled.span`
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
   padding: 3px 6px;
-  margin-right: 14px;
+  margin-right: 8px;
 `;
 
 const State = styled.span`
@@ -144,12 +156,10 @@ const State = styled.span`
 `;
 
 const LikesImg = styled.img`
-  height: 80%;
-  width: 80%;
   object-fit: none;
   padding-right: 5px;
 `;
 
-const LikesCnt = styled.p`
+/*const LikesCnt = styled.p`
   color: ${colors.black.origin};
-`;
+`;*/

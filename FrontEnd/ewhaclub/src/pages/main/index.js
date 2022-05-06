@@ -1,7 +1,22 @@
-import React from "react";
-
+import React, { useState } from "react";
+import logo from "asset/logo.png";
+import styled from "styled-components";
+import SearchInput from "components/searchinput";
 const Main = () => {
-  return <div> 메인페이지</div>;
+  return (
+    <Section>
+      <img src={logo} alt="logo"></img>
+      <SearchInput />
+    </Section>
+  );
 };
 
 export default Main;
+
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 128px;
+`;

@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
       border-radius: 18px;
     }
   }
+  a{
+    margin:0;
+    padding:0;
+  }
   button:hover {
     cursor: pointer;
   }
