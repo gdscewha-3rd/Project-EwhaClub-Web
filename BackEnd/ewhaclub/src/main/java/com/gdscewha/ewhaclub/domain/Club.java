@@ -18,9 +18,8 @@ public class Club {
     @Column(name = "club_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @Column(nullable = false)
+    private int category;
 
     @Column(nullable = false, length = 45)
     private String name;
