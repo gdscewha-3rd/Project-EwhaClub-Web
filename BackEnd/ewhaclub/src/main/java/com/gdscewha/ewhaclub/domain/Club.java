@@ -65,4 +65,31 @@ public class Club {
 
     @Column(columnDefinition = "TEXT")
     private String youtubeUrl;
+
+    public Club(int category, String name, String engName,
+                String shortDescription, String detailDescription, String detailActivity,
+                LocalDateTime recruitStart, LocalDateTime recruitEnd, boolean isRecruiting,
+                String recruitRequirement, String howToApply, Long viewCnt, String mainImgUrl,
+                String posterImgUrl, String instaUrl, String facebookUrl, String youtubeUrl) {
+        this.category = category;
+        this.name = name;
+        this.engName = engName;
+        this.shortDescription = shortDescription;
+        this.detailDescription = detailDescription;
+        this.detailActivity = detailActivity;
+        this.recruitStart = recruitStart;
+        this.recruitEnd = recruitEnd;
+        this.isRecruiting = isRecruiting;
+        this.recruitRequirement = recruitRequirement;
+        this.howToApply = howToApply;
+        this.viewCnt = viewCnt;
+        this.mainImgUrl = mainImgUrl;
+        this.posterImgUrl = posterImgUrl;
+        this.instaUrl = instaUrl;
+        this.facebookUrl = facebookUrl;
+        this.youtubeUrl = youtubeUrl;
+    }
+
+    public Club() {
+    }
 }

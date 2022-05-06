@@ -17,4 +17,13 @@ public class MainPageClubDto {
     private String shortDescription;
     private boolean isRecruiting;
 
+    public MainPageClubDto(@NotNull Long id, String mainImgUrl, String name,
+                           int category, String shortDescription, boolean isRecruiting) {
+        this.id = id;
+        this.mainImgUrl = mainImgUrl;
+        this.name = name;
+        this.category = category;
+        this.shortDescription = shortDescription;
+        this.isRecruiting = isRecruiting;
+    }
 }
