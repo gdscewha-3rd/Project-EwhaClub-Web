@@ -1,5 +1,8 @@
 package com.gdscewha.ewhaclub.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.gdscewha.ewhaclub.domain.Club;
 import com.gdscewha.ewhaclub.dto.DetailPageClubDto;
 import com.gdscewha.ewhaclub.dto.MainPageClubDto;
@@ -19,9 +22,11 @@ import java.util.List;
 public class ClubController {
     @Autowired
     private ClubService clubService;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public ClubController(ClubService clubService){
         this.clubService = clubService;
+        this.objectMapper.setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
     }
 
     @GetMapping("/clubs")
@@ -30,7 +35,7 @@ public class ClubController {
         List<MainPageClubDto> clubList = new ArrayList<>();
         for (Club club : clubs) {
             MainPageClubDto dto = MainPageClubDto.builder()
-                    .id(club.getId())
+                    .id(club.getClubId())
                     .name(club.getName())
                     .category(club.getCategory())
                     .shortDescription(club.getShortDescription())
@@ -45,9 +50,9 @@ public class ClubController {
     }
 
     @GetMapping(value="/club/{clubId}")
-    public DetailPageClubDto getDetailPage(@PathVariable("clubId") Long clubId){
+    public DetailPageClubDto getDetailPage(@PathVariable("clubId") Long clubId) throws Exception {
         DetailPageClubDto detailPageClubDto = clubService.getDetailPage(clubId);
-        return detailPageClubDto;
+        return objectMapper.readValue(objectMapper.registerModule(new JavaTimeModule()).writeValueAsString(detailPageClubDto), DetailPageClubDto.class);
     }
 
     @GetMapping(value="/clubs/search")

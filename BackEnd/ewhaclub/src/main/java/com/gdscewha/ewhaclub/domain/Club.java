@@ -13,7 +13,7 @@ public class Club {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long clubId;
 
     @Column(nullable = false)
     private int category;
@@ -65,12 +65,12 @@ public class Club {
     private String facebookUrl;
 
     @Column(columnDefinition = "TEXT")
-    private String youtube_url;
+    private String youtubeUrl;
 
     public void updateView(){
-        Long view = this.getView_cnt();
+        Long view = this.getViewCnt();
         view++;
-        this.setView_cnt(view);
+        this.setViewCnt(view);
     }
 
     public Club(int category, String name, String engName,

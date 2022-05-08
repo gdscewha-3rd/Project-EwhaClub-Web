@@ -13,9 +13,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@service
+@Service
 @Transactional(readOnly = true)
-@RequiredArgsConstructor
 public class ClubService {
 
     private final ClubRepository clubRepository;
@@ -32,6 +31,7 @@ public class ClubService {
         return clubRepository.findAll();
     }
 
+    //특정 동아리 조회
     public DetailPageClubDto getDetailPage(Long clubId){
         Optional<Club> clubWrapper = clubRepository.findById(clubId);
         Club club = clubWrapper.get();
@@ -43,6 +43,7 @@ public class ClubService {
         return detailPageClubDto;
     }
 
+    //동아리 검색
     public List<MainPageClubDto> searchClubs(String keyword){
         /*List<MainPageClubDto> searchResults = new ArrayList<>();
         if(keyword.matches(".*[ㄱ-하-ㅣ가-힣]+.*")){

@@ -11,7 +11,6 @@ import javax.validation.constraints.NotNull;
 @Data
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 public class MainPageClubDto {
 
     @NotNull
