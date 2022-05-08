@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
-@Transactional
+@service
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class ClubService {
 
     private final ClubRepository clubRepository;
@@ -22,6 +23,13 @@ public class ClubService {
 
     public ClubService(ClubRepository clubRepository){
         this.clubRepository = clubRepository;
+    }
+
+    /**
+     * 전체 동아리 조회
+     */
+    public List<Club> findClubs() {
+        return clubRepository.findAll();
     }
 
     public DetailPageClubDto getDetailPage(Long clubId){
@@ -53,4 +61,5 @@ public class ClubService {
                 .map(c -> modelMapper.map(c, MainPageClubDto.class))
                 .collect(Collectors.toList());
     }
+    
 }
