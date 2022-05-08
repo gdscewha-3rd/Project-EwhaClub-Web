@@ -1,15 +1,13 @@
 package com.gdscewha.ewhaclub.domain;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @Entity
 public class Club {
 
@@ -18,15 +16,14 @@ public class Club {
     @Column(name = "club_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @Column(nullable = false)
+    private Long category_id;
 
     @Column(nullable = false, length = 45)
     private String name;
 
     @Column(nullable = false, length = 45)
-    private String eng_name;
+    private String engName;
 
     @Column(nullable = false, length = 255)
     private String short_description;
@@ -70,4 +67,10 @@ public class Club {
 
     @Column(columnDefinition = "TEXT")
     private String youtube_url;
+
+    public void updateView(){
+        Long view = this.getView_cnt();
+        view++;
+        this.setView_cnt(view);
+    }
 }

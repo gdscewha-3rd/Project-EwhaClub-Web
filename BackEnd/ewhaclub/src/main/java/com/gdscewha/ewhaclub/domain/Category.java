@@ -20,9 +20,6 @@ public class Category {
 
     @Column(nullable = false, length = 45)
     private String name;
-
-    @OneToMany(mappedBy="category", cascade = CascadeType.ALL)
-    private List<Club> clubList = new ArrayList<>();
 }
 
 
