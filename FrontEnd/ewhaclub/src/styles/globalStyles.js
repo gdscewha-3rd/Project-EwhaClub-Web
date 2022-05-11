@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto;
   }
   * {
+  background-color: rgba(66, 220, 96, 0.1);
     box-sizing: border-box;
     ::-webkit-scrollbar {
       width: 10px;
