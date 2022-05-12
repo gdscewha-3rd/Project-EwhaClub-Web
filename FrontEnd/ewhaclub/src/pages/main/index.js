@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "asset/logo.png";
+import logo from "public/asset/icons/logo.png";
 import styled from "styled-components";
 import SearchInput from "components/searchinput";
 const Main = () => {

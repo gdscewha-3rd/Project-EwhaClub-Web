@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import heart from "asset/heart.png";
+import heart from "public/asset/icons/heart.png";
 import {
   colors,
   fonts,

@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     padding: 0;
     margin: 0;
-    /*font-size: 62.5%;*/
+    font-size: 62.5%;
     font-family: Roboto;
   }
   * {
@@ -32,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
   }
   button:hover {
     cursor: pointer;
+  }
+  img{
+    background-color: transparent;
   }
 
   /*font*/

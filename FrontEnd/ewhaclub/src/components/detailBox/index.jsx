@@ -13,12 +13,13 @@ import {
   TagsWrapper,
   Title,
 } from "./style";
-import { InstaIcon, YoutubeIcon } from "asset";
-import { useLocation } from "react-router-dom";
-import QueryString from "qs";
-import { getClubData } from "apis/detail.api";
+
+// import { useLocation } from "react-router-dom";
+// import QueryString from "qs";
+// import { getClubData } from "apis/detail.api";
 import { useEffect, useState } from "react";
 import dummy from "db/data1.json";
+import { InstaIcon, YoutubeIcon } from "public/asset/icons";
 
 const category_color = {
   공연: `${colors.red.light}`,
@@ -51,7 +52,7 @@ const DetailBox = () => {
   const setClubData = async () => {
     // const club = await getClubData(id);
     // setClub(club);
-    setClub(dummy.data);
+    setClub(dummy.data[0]);
   };
 
   useEffect(() => {
@@ -65,8 +66,8 @@ const DetailBox = () => {
           <Title>
             <h1>{club.name}</h1>
             <Sns>
-              <InstaIcon />
-              <YoutubeIcon />
+              <img src={InstaIcon} alt="인스타" />
+              <img src={YoutubeIcon} alt="유튜브" />
             </Sns>
           </Title>
           <Description>{club.short_description}</Description>
