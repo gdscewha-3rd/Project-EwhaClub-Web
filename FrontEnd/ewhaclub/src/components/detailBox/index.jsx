@@ -19,7 +19,7 @@ import {
 // import { getClubData } from "apis/detail.api";
 import { useEffect, useState } from "react";
 import dummy from "db/data1.json";
-import { InstaIcon, YoutubeIcon } from "public/asset";
+import { InstaIcon, YoutubeIcon } from "public/asset/icons";
 
 const category_color = {
   공연: `${colors.red.light}`,
