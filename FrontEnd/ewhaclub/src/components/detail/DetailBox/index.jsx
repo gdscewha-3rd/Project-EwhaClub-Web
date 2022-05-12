@@ -1,25 +1,33 @@
 import { colors } from "styles/styleObj";
 import {
   Category,
-  Description,
+  ShortDesc,
   Header,
   ImgWrapper,
   Infomation,
-  Introduce,
+  LeftSection,
   Line,
   Sns,
   State,
   StyledRoot,
   TagsWrapper,
   Title,
+  RightSection,
+  DetailDesc,
+  SectionTitle,
+  SectionDesc,
+  Hits,
+  MainActivity,
+  Recruitment,
+  Poster,
 } from "./style";
 
 // import { useLocation } from "react-router-dom";
 // import QueryString from "qs";
 // import { getClubData } from "apis/detail.api";
 import { useEffect, useState } from "react";
-import dummy from "db/data1.json";
-import { InstaIcon, YoutubeIcon } from "asset/icons";
+import dummy from "db/detailData.json";
+import { EmptyHeart, InstaIcon, YoutubeIcon } from "asset/icons";
 
 const category_color = {
   공연: `${colors.red.light}`,
@@ -62,7 +70,7 @@ const DetailBox = () => {
   return (
     <StyledRoot>
       <Header>
-        <Introduce>
+        <LeftSection>
           <Title>
             <h1>{club.name}</h1>
             <Sns>
@@ -70,7 +78,7 @@ const DetailBox = () => {
               <img src={YoutubeIcon} alt="유튜브" />
             </Sns>
           </Title>
-          <Description>{club.short_description}</Description>
+          <ShortDesc>{club.short_description}</ShortDesc>
           <TagsWrapper>
             <Category color={category_color[club.category_name]}>
               {club.category_name}
@@ -79,13 +87,49 @@ const DetailBox = () => {
               {club.is_recruiting ? "모집중" : "모집마감"}
             </State>
           </TagsWrapper>
-        </Introduce>
-        <ImgWrapper>
-          <img src={club.main_img_url} alt={club.name}></img>
-        </ImgWrapper>
+        </LeftSection>
+        <RightSection>
+          <ImgWrapper>
+            <img src={club.main_img_url} alt={club.name}></img>
+          </ImgWrapper>
+          <div>
+            <Hits>조회수 {club.view_cnt}</Hits>
+            <img src={EmptyHeart} alt="좋아요" />
+          </div>
+        </RightSection>
       </Header>
       <Line />
-      <Infomation></Infomation>
+      <Infomation>
+        <DetailDesc>
+          <SectionTitle>소개</SectionTitle>
+          <SectionDesc>{club.detail_description}</SectionDesc>
+        </DetailDesc>
+        <MainActivity>
+          <SectionTitle>주요활동</SectionTitle>
+          <SectionDesc>{club.detail_activity}</SectionDesc>
+        </MainActivity>
+        <Recruitment>
+          <SectionTitle>모집</SectionTitle>
+          <SectionDesc>
+            <div>
+              <strong>모집 기한:</strong>
+              {club.recruit_start} ~ {club.recruit_end}
+            </div>
+            <div>
+              <strong>모집 요건:</strong>
+              {club.recruit_requirement}
+            </div>
+            <div>
+              <strong>지원 방법:</strong>
+              {club.how_to_apply}
+            </div>
+          </SectionDesc>
+        </Recruitment>
+        <Poster>
+          <SectionTitle>포스터</SectionTitle>
+          <SectionDesc>{club.poster_img_url}</SectionDesc>
+        </Poster>
+      </Infomation>
     </StyledRoot>
   );
 };
