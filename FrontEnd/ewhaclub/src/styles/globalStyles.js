@@ -33,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
   button:hover {
     cursor: pointer;
   }
+  img{
+    background-color: transparent;
+  }
 
   /*font*/
       @font-face {
