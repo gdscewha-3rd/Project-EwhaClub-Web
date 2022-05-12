@@ -9,8 +9,6 @@ import {
   BOX_SHADOW,
 } from "styles/styleObj";
 
-import { Link } from "react-router-dom";
-
 const category_color = {
   공연: `${colors.red.light}`,
   문화: `${colors.orange.origin}`,
@@ -40,9 +38,8 @@ const Clubcard = ({ club }) => {
       </Thumbnail>
 
       <MainContainer>
-        <Link to={`/club?id=${club.id}`}>
-          <Title>{club.name}</Title>
-        </Link>
+        <Title>{club.name}</Title>
+
         <Description>{club.short_description}</Description>
       </MainContainer>
 
@@ -74,6 +71,7 @@ const Card = styled.div`
   border-radius: ${BORDER_RADIUS_1};
   box-shadow: ${BOX_SHADOW};
   padding: 15px;
+  height: 30rem;
 `;
 
 const Thumbnail = styled.div`

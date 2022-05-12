@@ -1,4 +1,4 @@
-import { deviceQuery } from "constants/deviceInfo";
+import { deviceQuery } from "../constants/deviceInfo";
 
 const { mobile, tablet, desktop } = deviceQuery;
 

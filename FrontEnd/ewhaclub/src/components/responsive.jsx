@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { deviceQuery } from "Constants/deviceInfo";
+import { deviceQuery } from "../constants/deviceInfo";
 
 export function useMedia() {
   const isMobile = useMediaQuery({
