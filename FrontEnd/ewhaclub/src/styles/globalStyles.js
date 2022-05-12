@@ -11,9 +11,10 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 62.5%;
     font-family: Roboto;
+    background-color: #D0FFD8;
   }
   * {
-  background-color: rgba(66, 220, 96, 0.1);
+  
     box-sizing: border-box;
     ::-webkit-scrollbar {
       width: 10px;
