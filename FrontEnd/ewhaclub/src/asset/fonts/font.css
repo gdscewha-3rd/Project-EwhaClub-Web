@@ -1,0 +1,36 @@
+/* 
+  src: 사용할 폰트의 위치 및 형식 
+    Modern Browsers => woff2
+    IE => woff
+*/
+
+/* 폰트 적용할 때 fallback폰트도 같이 써주기 */
+/* font-family:Pretendard-???, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; */
+@font-face {
+  font-family: "MinSans-Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Black.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Bold.woff")
+    format("woff");
+}
+
+@font-face {
+  font-family: "MinSans-Medium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Medium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MinSans-Light";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/MinSans-Light.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
