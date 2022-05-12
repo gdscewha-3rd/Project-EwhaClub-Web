@@ -1,0 +1,26 @@
+{
+  "code": "200",
+  "msg": "ok",
+  "data": [
+    {
+      "id": 1,
+      "main_img_url": "https://pbs.twimg.com/media/EbIbELvUEAIxX30.png",
+      "name": "이클레스",
+      "eng_name": "EKLES",
+      "category_id": 4,
+      "short_description": "이클레스는 교환학생과 함께하는 문화교류동아리입니다.",
+      "detail_description": "이클레스(EKLES)는 교환학생 멘토링 중앙동아리로서 자신이 멘토가 되어 멘티인 교환학생들의 한국 생활 적응을 도와주고 매주 열리는 정기적인 세미나를 통해 교환학생들과 함께 한국 문화를 체험하는 동아리입니다. 세미나 시간에는 교환학생들과 즐거운 한국 전통놀이 체험, 한강치맥, 남산타워 견학과 같은 외부 활동들을 멘티들과 즐길 수 있습니다.",
+      "detail_activity": "매주 수요일 5시에 줌을 통해 교환학생들에게 한국을 알릴 수 있는 정기 세미나를 진행합니다.",
+      "is_recruiting": 1,
+      "recruit_start": "2022-03-01T09:00:00",
+      "recruit_end": "2022-03-15T08:59:59",
+      "recruit_requirement": "21, 22학번 재학생, 20학번 편입생",
+      "how_to_apply": "https://cafe.naver.com/ekles 네이버 카페에서 지원서 다운 후 ewhaekles2022@gmail.com으로 지원서 전송",
+      "view_cnt": 2,
+      "poster_img_url": "https://cdn141.picsart.com/325217834130211.png",
+      "insta_url": "https://www.instagram.com/ewhaekles/",
+      "facebook_url": "https://www.facebook.com/ewhaekles2022/",
+      "youtube_url": null
+    }
+  ]
+}

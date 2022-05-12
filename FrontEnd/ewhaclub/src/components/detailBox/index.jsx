@@ -1,4 +1,4 @@
-import { colors } from "../styles/styleObj";
+import { colors } from "styles/styleObj";
 import {
   Category,
   Description,
@@ -13,11 +13,12 @@ import {
   TagsWrapper,
   Title,
 } from "./style";
-import { InstaIcon, YoutubeIcon } from "../asset";
+import { InstaIcon, YoutubeIcon } from "asset";
 import { useLocation } from "react-router-dom";
 import QueryString from "qs";
-import { getClubData } from "../apis/detail.api";
+import { getClubData } from "apis/detail.api";
 import { useEffect, useState } from "react";
+import dummy from "db/data1.json";
 
 const category_color = {
   공연: `${colors.red.light}`,
@@ -41,15 +42,16 @@ const state_color = {
 
 const DetailBox = () => {
   const [club, setClub] = useState([]);
-  const location = useLocation();
+  // const location = useLocation();
 
-  const { id } = QueryString.parse(location.search, {
-    ignoreQueryPrefix: true,
-  });
+  // const { id } = QueryString.parse(location.search, {
+  //   ignoreQueryPrefix: true,
+  // });
 
   const setClubData = async () => {
-    const club = await getClubData(id);
-    setClub(club);
+    // const club = await getClubData(id);
+    // setClub(club);
+    setClub(dummy.data);
   };
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import searchicon from "asset/search.png";
 import style from "styled-components";
-import { colors, fonts, BORDER_RADIUS_3 } from "../styles/styleObj";
+import { colors, fonts, BORDER_RADIUS_3 } from "styles/styleObj";
 import { useHistory } from "react-router-dom";
 
 const SearchInput = () => {

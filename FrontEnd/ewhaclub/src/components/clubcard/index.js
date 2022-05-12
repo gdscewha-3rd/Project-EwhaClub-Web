@@ -7,7 +7,7 @@ import {
   BORDER_RADIUS_1,
   BORDER_RADIUS_2,
   BOX_SHADOW,
-} from "../styles/styleObj";
+} from "styles/styleObj";
 
 import { Link } from "react-router-dom";
 
