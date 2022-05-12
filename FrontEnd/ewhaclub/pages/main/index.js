@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "asset/logo.png";
 import styled from "styled-components";
-import SearchInput from "components/searchinput";
+import SearchInput from "../components/searchinput";
 const Main = () => {
   return (
     <Section>

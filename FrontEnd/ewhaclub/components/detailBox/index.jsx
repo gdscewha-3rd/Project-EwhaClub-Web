@@ -1,4 +1,4 @@
-import { colors } from "styles/styleObj";
+import { colors } from "../styles/styleObj";
 import {
   Category,
   Description,
@@ -13,7 +13,11 @@ import {
   TagsWrapper,
   Title,
 } from "./style";
-import { InstaIcon, YoutubeIcon } from "asset";
+import { InstaIcon, YoutubeIcon } from "../asset";
+import { useLocation } from "react-router-dom";
+import QueryString from "qs";
+import { getClubData } from "../apis/detail.api";
+import { useEffect, useState } from "react";
 
 const category_color = {
   공연: `${colors.red.light}`,
@@ -35,18 +39,23 @@ const state_color = {
   },
 };
 
-const club = {
-  id: 0,
-  main_img_url:
-    "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-  name: "영화패 누에",
-  category_name: "공연",
-  short_description:
-    "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-  is_recruiting: 0,
-};
-
 const DetailBox = () => {
+  const [club, setClub] = useState([]);
+  const location = useLocation();
+
+  const { id } = QueryString.parse(location.search, {
+    ignoreQueryPrefix: true,
+  });
+
+  const setClubData = async () => {
+    const club = await getClubData(id);
+    setClub(club);
+  };
+
+  useEffect(() => {
+    setClubData();
+  }, []);
+
   return (
     <StyledRoot>
       <Header>

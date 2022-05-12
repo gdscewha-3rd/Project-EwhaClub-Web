@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Clubcard from "components/clubcard/index";
-import SearchInput from "components/searchinput";
+import Clubcard from "../components/clubcard/index";
+import SearchInput from "../components/searchinput";
 import logo from "asset/logo.png";
 import dummy from "db/data.json";
-import { fonts } from "styles/styleObj";
+import { fonts } from "../styles/styleObj";
 import { useLocation } from "react-router-dom";
 import QueryString from "qs";
 import axios from "axios";
