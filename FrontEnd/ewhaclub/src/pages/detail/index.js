@@ -1,4 +1,4 @@
-import logo from "asset/icons/logo.png";
+import { LogoIcon } from "asset/icons";
 import ClubDetail from "components/detail";
 import styled from "styled-components";
 
@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Detail = () => {
   return (
     <StyledRoot>
-      <img src={logo} alt="logo"></img>
+      <img src={LogoIcon} alt="logo"></img>
       <ClubDetail />
     </StyledRoot>
   );

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Clubcard from "components/clubcard/index";
-import SearchInput from "components/searchinput";
-import logo from "asset/icons/logo.png";
-import dummy from "db/data.json";
-import { fonts } from "styles/styleObj";
+//import { getResultArr } from "apis/search.api";
 import { useLocation } from "react-router-dom";
 import QueryString from "qs";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import Clubcard from "components/clubcard";
+import SearchInput from "components/searchinput";
+
+import styled from "styled-components";
+import { LogoIcon } from "asset/icons";
+import { fonts } from "styles/styleObj";
+
+import dummy from "db/data.json";
 
 const Result = () => {
   const [data, setData] = useState([]);
@@ -18,20 +20,21 @@ const Result = () => {
     ignoreQueryPrefix: true,
   });
 
-  const getclubs = async () => {
-    //const data=await axios.get("");
+  const getSearchData = async () => {
+    //const dataArray = await getResultArr(name);
+    //setData(dataArray);
     setData(dummy.data);
   };
 
   useEffect(() => {
-    getclubs();
+    getSearchData();
   }, []);
 
   return (
     <>
-      <Section>
+      <StyledRoot>
         <Link to="/">
-          <img src={logo} alt="logo"></img>
+          <img src={LogoIcon} alt="logo"></img>
         </Link>
 
         <SearchInput />
@@ -53,14 +56,15 @@ const Result = () => {
             ))}
           </List>
         )}
-      </Section>
+      </StyledRoot>
     </>
   );
 };
 
 export default Result;
 
-const Section = styled.div`
+const StyledRoot = styled.div`
+  font-family: "MinSans-Medium";
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,4 +88,5 @@ const SearchInfo = styled.div`
 
 const Text = styled.span`
   font-weight: ${(props) => props.weight};
+  font-size: ${fonts.size.medium};
 `;
