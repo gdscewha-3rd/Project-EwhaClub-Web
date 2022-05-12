@@ -1,5 +1,5 @@
 import logo from "asset/icons/logo.png";
-import DetailBox from "components/detail/DetailBox";
+import ClubDetail from "components/detail";
 import styled from "styled-components";
 
 // 선택한 동아리의 data를 어떻게 들고오지?
@@ -7,7 +7,7 @@ const Detail = () => {
   return (
     <StyledRoot>
       <img src={logo} alt="logo"></img>
-      <DetailBox />
+      <ClubDetail />
     </StyledRoot>
   );
 };
