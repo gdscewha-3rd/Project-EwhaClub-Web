@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { fonts } from "styles/styleObj";
 
-export const StyledRoot = styled.div`
-  font-family: "Pretendard-Medium";
-`;
+export const StyledRoot = styled.div``;
 
 export const LeftSection = styled.div``;
 
-export const Title = styled.div``;
+export const Title = styled.div`
+  h1 {
+    font-size: 4rem;
+    font-weight: ${fonts.weight.bold};
+  }
+`;
 
 export const Sns = styled.div``;
 
