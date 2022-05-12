@@ -40,7 +40,7 @@ const Clubcard = ({ club }) => {
       </Thumbnail>
 
       <MainContainer>
-        <Link to={`/club?name=${club.name}`}>
+        <Link to={`/club?id=${club.id}`}>
           <Title>{club.name}</Title>
         </Link>
         <Description>{club.short_description}</Description>
