@@ -11,7 +11,7 @@ import {
   TagsWrapper,
   Title,
 } from "./style";
-import { EmptyHeart, InstaIcon, YoutubeIcon } from "asset/icons";
+import { EmptyHeart, FaceBookIcon, InstaIcon, YoutubeIcon } from "asset/icons";
 import { colors } from "styles/styleObj";
 
 const category_color = {
@@ -41,8 +41,9 @@ const DetailHeader = ({ club }) => {
         <Title>
           <h1>{club.name}</h1>
           <Sns>
-            <img src={InstaIcon} alt="인스타" />
-            <img src={YoutubeIcon} alt="유튜브" />
+            <img src={InstaIcon} alt="" />
+            <img src={YoutubeIcon} alt="" />
+            <img src={FaceBookIcon} alt="" />
           </Sns>
         </Title>
         <ShortDesc>{club.short_description}</ShortDesc>

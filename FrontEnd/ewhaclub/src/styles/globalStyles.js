@@ -10,11 +10,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     font-size: 62.5%;
-    font-family: "MinSans-Medium";
     background-color: #D0FFD8;
   }
   * {
-  
+  /* font-family: MinSans-Medium; */
     box-sizing: border-box;
     ::-webkit-scrollbar {
       width: 10px;

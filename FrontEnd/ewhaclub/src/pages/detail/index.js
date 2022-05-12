@@ -20,4 +20,5 @@ const StyledRoot = styled.div`
   justify-content: center;
   align-items: center;
   padding: 12.8rem;
+  font-family: "MinSans-Medium";
 `;
