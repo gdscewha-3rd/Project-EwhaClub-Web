@@ -1,18 +1,19 @@
 package com.gdscewha.ewhaclub.domain;
 
-import lombok.Getter;
+import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @Entity
 public class Club {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long clubId;
 
     @Column(nullable = false)
     private int category;
@@ -65,6 +66,12 @@ public class Club {
 
     @Column(columnDefinition = "TEXT")
     private String youtubeUrl;
+
+    public void updateView(){
+        Long view = this.getViewCnt();
+        view++;
+        this.setViewCnt(view);
+    }
 
     public Club(int category, String name, String engName,
                 String shortDescription, String detailDescription, String detailActivity,
