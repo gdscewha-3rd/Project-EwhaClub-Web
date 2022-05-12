@@ -1,4 +1,4 @@
-import logo from "public/asset/icons/logo.png";
+import logo from "asset/icons/logo.png";
 import DetailBox from "components/detailBox";
 import styled from "styled-components";
 

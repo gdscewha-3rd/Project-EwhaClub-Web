@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Clubcard from "components/clubcard/index";
 import SearchInput from "components/searchinput";
-import logo from "public/asset/icons/logo.png";
+import logo from "asset/icons/logo.png";
 import dummy from "db/data.json";
 import { fonts } from "styles/styleObj";
 import { useLocation } from "react-router-dom";
