@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledRoot = styled.div`
   width: 99rem;
   background-color: white;
-  font-family: "Pretendard-Medium";
 `;
 
 export const DetailDesc = styled.section``;
