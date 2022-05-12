@@ -45,7 +45,11 @@ const Result = () => {
         {data && (
           <List>
             {data.map((club, idx) => (
-              <>{<Clubcard key={idx} club={club} />}</>
+              <>
+                <Link to={`/club?id=${club.id}`}>
+                  {<Clubcard key={idx} club={club} />}
+                </Link>
+              </>
             ))}
           </List>
         )}
