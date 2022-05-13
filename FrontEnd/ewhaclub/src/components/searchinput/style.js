@@ -2,8 +2,8 @@ import style from "styled-components";
 import { colors, fonts, BORDER_RADIUS_3 } from "styles/styleObj";
 
 export const StyledRoot = style.div`  
-  margin: 45px 0 50px 0;
-  width:100%;
+  padding: 50px 0;
+  width:56rem;
 `;
 
 export const SearchForm = style.form`     
@@ -11,7 +11,7 @@ export const SearchForm = style.form`
   flex-direction:row;
   text-align: center;
   margin: 0 auto;
-  width:60%;
+  width:100%;
   height:44px;
   border-radius:${BORDER_RADIUS_3};
   border : 1px solid ${colors.green.ewha};

@@ -1,8 +1,8 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import styled from "styled-components";
 import { colors ,fonts} from 'styles/styleObj';
 const categoryArray = [
-    { name: "모두", id: "" },
+    { name: "모두", id: 0 },
     { name: "공연", id: 1 },
     { name: "문화", id: 2 },
     { name: "사회과학", id: 3 },
@@ -11,12 +11,41 @@ const categoryArray = [
     { name: "체육", id: 6 },
     { name: "학술", id: 7 },
   ];
-const CategoryMenu=()=>{
+const CategoryMenu=({getCategoryId})=>{
+
+  const [btnselect, setBtnSelect]=useState([
+     true,
+    false,
+     false,
+     false,
+     false,
+     false,
+     false,
+     false,
+    
+  ]);
+
+
+
+  
+
+  const catgoryBtnClick=({target})=>{
+    
+    const {name,value}=target;
+    const selectArray = [...Array(btnselect.length)].map((_, i) => {if (i===value) return true; else return false;});
+    //console.log(selectArray);
+    setBtnSelect(selectArray);
+    getCategoryId(value);
+    
+ 
+   
+  }
+
     return (    <StyledRoot>
     
     {categoryArray.map((club) => (
         <>
-          <span>{club.name}</span>
+          <Btn background={btnselect[club.id] ? `${colors.green.ewha}`: `${colors.white.origin}`} color={btnselect[club.id] ? `${colors.white.origin}` : `${colors.black.light_grey_3}`} name={club.name} value={club.id} onClick={catgoryBtnClick}>{club.name}</Btn>
         </>
       ))}
     
@@ -29,18 +58,23 @@ const StyledRoot=styled.div`
 width: 56rem;
 display:grid;
 grid-template-columns: repeat(4, 1fr);
-row-gap: 8rem;
-column-gap: 9.4rem;
-span {
-    width:7rem;
-    height: 7rem;
-    border-radius: 50%;
-    background-color:${colors.white.origin};
-    text-align: center;
-    line-height: 7rem;
-    color:${colors.black.light_grey_3};
-    font-weight:${fonts.weight.medium};
-    font-size:${fonts.size.semi_regular};
-    line-height: 2.4rem;
-}
+row-gap: 7rem;
+column-gap: 7rem;
+padding: 30px 0;
+
+`;
+
+const Btn=styled.button`
+  width:8rem;
+  height: 8rem;
+  line-height: 7rem;
+  border-radius: 50%;
+
+ background-color:  ${(props) => props.background};
+  text-align: center;
+  color:${(props) => props.color};
+  font-weight:${fonts.weight.bold};
+  font-size:${fonts.size.small};
+  border: 0px solid;
+
 `;

@@ -7,6 +7,7 @@ import {
   BORDER_RADIUS_2,
   BOX_SHADOW,
 } from "styles/styleObj";
+
 export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +16,7 @@ export const StyledRoot = styled.div`
   background-color: ${colors.white.origin};
   border-radius: ${BORDER_RADIUS_1};
   box-shadow: ${BOX_SHADOW};
-  padding: 15px;
+  padding: 1.5rem;
   height: 30rem;
 
   text-decoration: none;
