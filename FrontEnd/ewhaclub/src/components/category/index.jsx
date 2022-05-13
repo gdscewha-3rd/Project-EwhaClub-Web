@@ -32,8 +32,9 @@ const CategoryMenu=({getCategoryId})=>{
   const catgoryBtnClick=({target})=>{
     
     const {name,value}=target;
-    const selectArray = [...Array(btnselect.length)].map((_, i) => {if (i===value) return true; else return false;});
-    //console.log(selectArray);
+    const selectArray = [...Array(btnselect.length)].map((_, i) =>
+      {if (i===parseInt(value)) return true; else return false;});
+    console.log(selectArray);
     setBtnSelect(selectArray);
     getCategoryId(value);
     
