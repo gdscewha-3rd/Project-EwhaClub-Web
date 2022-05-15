@@ -35,6 +35,16 @@ const state_color = {
 };
 
 const DetailHeader = ({ club }) => {
+  const categoryIdToName = {
+    1: "공연",
+    2: "문화",
+    3: "사회과학",
+    4: "사회연대",
+    5: "종교",
+    6: "체육",
+    7: "학술",
+  };
+
   return (
     <StyledRoot>
       <LeftSection>
@@ -48,8 +58,8 @@ const DetailHeader = ({ club }) => {
         </Title>
         <ShortDesc>{club.short_description}</ShortDesc>
         <TagsWrapper>
-          <Category color={category_color[club.category_name]}>
-            {club.category_name}
+          <Category color={category_color[club.category_id]}>
+            {categoryIdToName[club.category_id]}
           </Category>
           <State color={state_color[club.is_recruiting]}>
             {club.is_recruiting ? "모집중" : "모집마감"}
