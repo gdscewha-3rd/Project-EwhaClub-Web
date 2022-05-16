@@ -31,6 +31,7 @@ export const Title = styled.div`
 
 export const Sns = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;

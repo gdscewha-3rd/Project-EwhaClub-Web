@@ -22,4 +22,8 @@ export const Line = styled.div`
   background-color: ${colors.green.ewha};
   margin-top: 2.6rem;
   margin-bottom: 2.6rem;
+
+  ${applyMediaQuery("tablet")} {
+    width: 75rem;
+  }
 `;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { colors, fonts } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
+  width: 100%;
   background-color: white;
 `;
 
@@ -27,7 +28,7 @@ export const ImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   img {
-    width: 80rem;
+    width: 100%;
     margin-top: 3.2rem;
   }
 `;
