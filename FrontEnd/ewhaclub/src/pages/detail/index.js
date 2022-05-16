@@ -1,5 +1,6 @@
 import logo from "asset/icons/logo.png";
 import ClubDetail from "components/detail";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
@@ -7,7 +8,10 @@ import { applyMediaQuery } from "styles/mediaQuery";
 const Detail = () => {
   return (
     <StyledRoot>
-      <img src={logo} alt="logo"></img>
+      <Link to="/">
+        <img src={logo} alt="logo"></img>
+      </Link>
+
       <ClubDetail />
     </StyledRoot>
   );
