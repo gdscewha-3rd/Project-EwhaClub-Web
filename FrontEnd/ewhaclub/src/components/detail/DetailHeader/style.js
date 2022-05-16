@@ -36,6 +36,7 @@ export const TagsWrapper = styled.div`
   font-weight: ${fonts.weight.light};
   font-size: 1.4rem;
   color: ${colors.black.grey};
+  font-weight: ${fonts.weight.light};
 `;
 
 export const Category = styled.span`
