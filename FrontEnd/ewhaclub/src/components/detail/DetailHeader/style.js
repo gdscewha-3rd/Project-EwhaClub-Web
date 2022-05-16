@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fonts } from "styles/styleObj";
+import { colors, fonts } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
   width: 100%;
@@ -35,14 +35,22 @@ export const ShortDesc = styled.p`
 export const TagsWrapper = styled.div`
   font-weight: ${fonts.weight.light};
   font-size: 1.4rem;
-  background-color: {color};
+  color: ${colors.black.grey};
 `;
 
 export const Category = styled.span`
-  margin-right: 2rem;
+  border-radius: 20px;
+  padding: 0.3rem 1.2rem;
+  margin-right: 1.5rem;
+  background-color: ${(props) => props.color};
 `;
 
-export const State = styled.span``;
+export const State = styled.span`
+  border-radius: 20px;
+  padding: 0.3rem 1.2rem;
+  background-color: ${(props) => props.color.color};
+  border: 1px solid ${(props) => props.color.border};
+`;
 
 export const RightSection = styled.section`
   padding-left: auto;
