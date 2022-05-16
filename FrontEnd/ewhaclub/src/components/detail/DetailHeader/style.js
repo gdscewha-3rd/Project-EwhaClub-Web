@@ -1,14 +1,22 @@
 import styled from "styled-components";
+import { applyMediaQuery } from "styles/mediaQuery";
 import { colors, fonts } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  ${applyMediaQuery("tablet")} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const LeftSection = styled.section`
   padding-right: 6rem;
+  ${applyMediaQuery("tablet")} {
+    padding-right: 0;
+  }
 `;
 
 export const Title = styled.div`
@@ -31,6 +39,9 @@ export const Sns = styled.div`
 export const ShortDesc = styled.p`
   font-size: 1.6rem;
   margin-bottom: 2.8rem;
+  ${applyMediaQuery("tablet")} {
+    margin-bottom: -1.7rem;
+  }
 `;
 
 export const TagsWrapper = styled.div`
@@ -38,6 +49,10 @@ export const TagsWrapper = styled.div`
   font-size: 1.4rem;
   color: ${colors.black.grey};
   font-weight: ${fonts.weight.light};
+  ${applyMediaQuery("tablet")} {
+    float: right;
+    margin-bottom: 3rem;
+  }
 `;
 
 export const Category = styled.span`
@@ -56,11 +71,10 @@ export const State = styled.span`
 
 export const RightSection = styled.section`
   padding-left: auto;
-  div {
+  ${applyMediaQuery("tablet")} {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.3rem;
-    float: right;
   }
 `;
 
@@ -70,8 +84,20 @@ export const ImgWrapper = styled.div`
     width: 51.2rem;
     height: 28.8rem;
   }
+  ${applyMediaQuery("tablet")} {
+    margin-bottom: 1rem;
+  }
+`;
+
+export const ReactionWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  float: right;
 `;
 
 export const Hits = styled.span`
   font-size: 1.5rem;
+  ${applyMediaQuery("tablet")} {
+  }
 `;

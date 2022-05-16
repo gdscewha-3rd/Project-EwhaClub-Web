@@ -3,6 +3,7 @@ import {
   Hits,
   ImgWrapper,
   LeftSection,
+  ReactionWrapper,
   RightSection,
   ShortDesc,
   Sns,
@@ -77,10 +78,10 @@ const DetailHeader = ({ club }) => {
         <ImgWrapper>
           <img src={club.main_img_url} alt={club.name}></img>
         </ImgWrapper>
-        <div>
+        <ReactionWrapper>
           <Hits>조회수 {club.view_cnt}</Hits>
           <img src={EmptyHeart} alt="좋아요" />
-        </div>
+        </ReactionWrapper>
       </RightSection>
     </StyledRoot>
   );

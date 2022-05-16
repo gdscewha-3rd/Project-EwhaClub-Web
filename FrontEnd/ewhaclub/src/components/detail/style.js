@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { applyMediaQuery } from "styles/mediaQuery";
 import { colors } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
@@ -9,6 +10,10 @@ export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${applyMediaQuery("tablet")} {
+    width: 80rem;
+  }
 `;
 
 export const Line = styled.div`
