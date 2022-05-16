@@ -25,6 +25,7 @@ export const Sns = styled.div`
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  cursor: pointer;
 `;
 
 export const ShortDesc = styled.p`

@@ -52,9 +52,15 @@ const DetailHeader = ({ club }) => {
         <Title>
           <h1>{club.name}</h1>
           <Sns>
-            <img src={InstaIcon} alt="" />
-            <img src={YoutubeIcon} alt="" />
-            <img src={FaceBookIcon} alt="" />
+            <a href={club.insta_url}>
+              <img src={InstaIcon} alt="" />
+            </a>
+            <a href={club.youtube_url}>
+              <img src={YoutubeIcon} alt="" />
+            </a>
+            <a href={club.facebook_url}>
+              <img src={FaceBookIcon} alt="" />
+            </a>
           </Sns>
         </Title>
         <ShortDesc>{club.short_description}</ShortDesc>
