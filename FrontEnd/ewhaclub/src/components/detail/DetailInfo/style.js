@@ -2,21 +2,8 @@ import styled from "styled-components";
 import { colors, fonts } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
-  width: 87rem;
   background-color: white;
 `;
-
-export const DetailDesc = styled.section``;
-
-export const MainActivity = styled.section`
-  width: 87rem;
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Recruitment = styled.section``;
-
-export const Poster = styled.section``;
 
 export const SectionTitle = styled.div`
   width: fit-content;
@@ -34,4 +21,13 @@ export const SectionDesc = styled.div`
   font-size: 1.8rem;
   margin-top: 2rem;
   margin-bottom: 3rem;
+`;
+
+export const ImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  img {
+    width: 80rem;
+    margin-top: 3.2rem;
+  }
 `;
