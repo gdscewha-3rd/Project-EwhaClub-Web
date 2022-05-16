@@ -58,10 +58,12 @@ export const RightSection = styled.section`
     display: flex;
     align-items: center;
     gap: 1.3rem;
+    float: right;
   }
 `;
 
 export const ImgWrapper = styled.div`
+  margin-bottom: 2.3rem;
   img {
     width: 51.2rem;
     height: 28.8rem;
