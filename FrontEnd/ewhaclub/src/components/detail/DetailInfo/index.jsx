@@ -1,25 +1,17 @@
-import {
-  DetailDesc,
-  MainActivity,
-  Poster,
-  Recruitment,
-  SectionDesc,
-  SectionTitle,
-  StyledRoot,
-} from "./style";
+import { ImgWrapper, SectionDesc, SectionTitle, StyledRoot } from "./style";
 
 const DetailInfo = ({ club }) => {
   return (
     <StyledRoot>
-      <DetailDesc>
+      <section>
         <SectionTitle>소개</SectionTitle>
         <SectionDesc>{club.detail_description}</SectionDesc>
-      </DetailDesc>
-      <MainActivity>
+      </section>
+      <section>
         <SectionTitle>주요활동</SectionTitle>
         <SectionDesc>{club.detail_activity}</SectionDesc>
-      </MainActivity>
-      <Recruitment>
+      </section>
+      <section>
         <SectionTitle>모집</SectionTitle>
         <SectionDesc>
           <div>
@@ -35,11 +27,13 @@ const DetailInfo = ({ club }) => {
             {club.how_to_apply}
           </div>
         </SectionDesc>
-      </Recruitment>
-      <Poster>
+      </section>
+      <section>
         <SectionTitle>포스터</SectionTitle>
-        <SectionDesc>{club.poster_img_url}</SectionDesc>
-      </Poster>
+        <ImgWrapper>
+          <img src={club.poster_img_url} alt="" />
+        </ImgWrapper>
+      </section>
     </StyledRoot>
   );
 };
