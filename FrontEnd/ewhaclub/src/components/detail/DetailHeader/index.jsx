@@ -14,15 +14,15 @@ import {
 import { EmptyHeart, FaceBookIcon, InstaIcon, YoutubeIcon } from "asset/icons";
 import { colors } from "styles/styleObj";
 
-// const category_color = {
-//   공연: `${colors.red.light}`,
-//   문화: `${colors.orange.origin}`,
-//   사회과학: `${colors.yellow.light}`,
-//   사회연대: `${colors.green.origin}`,
-//   종교: `${colors.blue.light}`,
-//   체육: `${colors.purple.light}`,
-//   학술: `${colors.purple.origin}`,
-// };
+const category_color = {
+  1: `${colors.red.light}`,
+  2: `${colors.orange.origin}`,
+  3: `${colors.yellow.light}`,
+  4: `${colors.green.light}`,
+  5: `${colors.blue.light}`,
+  6: `${colors.purple.light}`,
+  7: `${colors.purple.origin}`,
+};
 
 const state_color = {
   0: {
@@ -37,15 +37,15 @@ const state_color = {
 
 const DetailHeader = ({ club }) => {
   const categoryIdProperty = {
-    1: ["공연", `${colors.red.light}`],
-    2: ["문화", `${colors.orange.origin}`],
-    3: ["사회과학", `${colors.yellow.light}`],
-    4: ["사회연대", `${colors.green.light}`],
-    5: ["종교", `${colors.blue.light}`],
-    6: ["체육", `${colors.purple.light}`],
-    7: ["학술", `${colors.purple.origin}`],
+    1: "공연",
+    2: "문화",
+    3: "사회과학",
+    4: "사회연대",
+    5: "종교",
+    6: "체육",
+    7: "학술",
   };
-  console.log(categoryIdProperty[club.category_id][1]);
+
   return (
     <StyledRoot>
       <LeftSection>
@@ -59,8 +59,8 @@ const DetailHeader = ({ club }) => {
         </Title>
         <ShortDesc>{club.short_description}</ShortDesc>
         <TagsWrapper>
-          <Category color={categoryIdProperty[club.category_id][1]}>
-            {categoryIdProperty[club.category_id][0]}
+          <Category color={category_color[club.category_id]}>
+            {categoryIdProperty[club.category_id]}
           </Category>
           <State color={state_color[club.is_recruiting]}>
             {club.is_recruiting ? "모집중" : "모집마감"}

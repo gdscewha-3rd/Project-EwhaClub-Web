@@ -48,8 +48,8 @@ export const Category = styled.span`
 export const State = styled.span`
   border-radius: 20px;
   padding: 0.3rem 1.2rem;
-  background-color: ${(props) => props.color.color};
-  border: 1px solid ${(props) => props.color.border};
+  background-color: ${(props) => props.color};
+  border: 1px solid ${(props) => props.border};
 `;
 
 export const RightSection = styled.section`
