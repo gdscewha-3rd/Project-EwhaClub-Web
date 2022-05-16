@@ -10,9 +10,11 @@ export const StyledRoot = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   ${applyMediaQuery("tablet")} {
     width: 80rem;
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 40rem;
   }
 `;
 
@@ -22,8 +24,10 @@ export const Line = styled.div`
   background-color: ${colors.green.ewha};
   margin-top: 2.6rem;
   margin-bottom: 2.6rem;
-
   ${applyMediaQuery("tablet")} {
     width: 75rem;
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 35rem;
   }
 `;

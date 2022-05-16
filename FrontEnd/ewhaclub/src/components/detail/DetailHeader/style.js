@@ -3,20 +3,20 @@ import { applyMediaQuery } from "styles/mediaQuery";
 import { colors, fonts } from "styles/styleObj";
 
 export const StyledRoot = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  ${applyMediaQuery("tablet")} {
-    display: flex;
-    flex-direction: column;
+  ${applyMediaQuery("desktop")} {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const LeftSection = styled.section`
-  padding-right: 6rem;
-  ${applyMediaQuery("tablet")} {
-    padding-right: 0;
+  ${applyMediaQuery("desktop")} {
+    padding-right: 6rem;
   }
+  padding-right: 0;
 `;
 
 export const Title = styled.div`
@@ -26,6 +26,9 @@ export const Title = styled.div`
   h1 {
     font-size: 4rem;
     font-weight: ${fonts.weight.bold};
+    ${applyMediaQuery("mobile")} {
+      font-size: 3.6rem;
+    }
   }
 `;
 
@@ -54,6 +57,10 @@ export const TagsWrapper = styled.div`
     float: right;
     margin-bottom: 3rem;
   }
+  ${applyMediaQuery("mobile")} {
+    float: right;
+    margin-bottom: 3rem;
+  }
 `;
 
 export const Category = styled.span`
@@ -61,6 +68,9 @@ export const Category = styled.span`
   padding: 0.3rem 1.2rem;
   margin-right: 1.5rem;
   background-color: ${(props) => props.color};
+  ${applyMediaQuery("mobile")} {
+    margin-right: 0.5rem;
+  }
 `;
 
 export const State = styled.span`
@@ -72,21 +82,22 @@ export const State = styled.span`
 
 export const RightSection = styled.section`
   padding-left: auto;
-  ${applyMediaQuery("tablet")} {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 `;
 
 export const ImgWrapper = styled.div`
   margin-bottom: 2.3rem;
-  img {
-    width: 51.2rem;
-    height: 28.8rem;
-  }
   ${applyMediaQuery("tablet")} {
     margin-bottom: 1rem;
+  }
+  ${applyMediaQuery("mobile")} {
+    margin-bottom: 0.5rem;
+  }
+  img {
+    width: 51.2rem;
+    /* height: 28.8rem; */
+    ${applyMediaQuery("mobile")} {
+      width: 28rem;
+    }
   }
 `;
 
@@ -95,10 +106,14 @@ export const ReactionWrapper = styled.div`
   align-items: center;
   gap: 1.3rem;
   float: right;
+  ${applyMediaQuery("tablet")} {
+    margin-top: -3rem;
+  }
 `;
 
 export const Hits = styled.span`
   font-size: 1.5rem;
-  ${applyMediaQuery("tablet")} {
+  ${applyMediaQuery("mobile")} {
+    font-size: 1.2rem;
   }
 `;
