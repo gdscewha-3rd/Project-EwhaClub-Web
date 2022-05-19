@@ -12,7 +12,6 @@ export const colors = {
     light_grey_3: "#5C5C5C",
   },
   green: {
-    /*light_1: "rgba(66, 255, 96, 0.1)",*/
     light: "#C1E7A9",
     ewha: "#00462A",
     origin: "#447931",
