@@ -9,6 +9,7 @@ export const colors = {
     grey: "#454545",
     light_grey_1: "#E9E8E8",
     light_grey_2: "#BBBBBB",
+    light_grey_3: "#5C5C5C",
   },
   green: {
     light: "#C1E7A9",
@@ -47,18 +48,18 @@ export const fonts = {
     light: 300,
   },
   size: {
-    large: "40px",
-    medium: "24px",
-    semi_regular: "18px",
-    regular: "16px",
-    small: "14px",
+    large: "4.0rem",
+    medium: "2.4rem",
+    semi_regular: "1.8rem",
+    regular: "1.6rem",
+    small: "1.4rem",
   },
 };
 
 /*테두리*/
-export const BORDER_RADIUS_1 = "10px";
-export const BORDER_RADIUS_2 = "20px";
-export const BORDER_RADIUS_3 = "25px";
+export const BORDER_RADIUS_1 = "1.0rem";
+export const BORDER_RADIUS_2 = "2.0rem";
+export const BORDER_RADIUS_3 = "2.5rem";
 
 /*박스 쉐도우*/
-export const BOX_SHADOW = "0px 4px 4px rgba(0, 0, 0, 0.25)";
+export const BOX_SHADOW = "0rem 0.4rem 0.4px rgba(0, 0, 0, 0.25)";

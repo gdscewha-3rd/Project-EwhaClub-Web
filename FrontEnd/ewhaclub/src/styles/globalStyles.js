@@ -31,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
   a{
     margin:0;
     padding:0;
+    text-decoration: none;
   }
   button:hover {
     cursor: pointer;
