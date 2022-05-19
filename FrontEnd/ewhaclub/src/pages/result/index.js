@@ -9,8 +9,10 @@ import SearchInput from "components/searchinput";
 import styled from "styled-components";
 import { LogoIcon } from "asset/icons";
 import { fonts } from "styles/styleObj";
+import { List } from "pages/main";
 
 import dummy from "db/data.json";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const Result = () => {
   const [data, setData] = useState([]);
@@ -64,26 +66,33 @@ const Result = () => {
 export default Result;
 
 const StyledRoot = styled.div`
-  font-family: "MinSans-Medium";
+  font-family: MinSans-Medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 128px;
+  padding: 12.8rem;
 `;
 
-const List = styled.div`
+{
+  /*const List = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
   row-gap: 64px;
   column-gap: 45px;
-`;
+`;*/
+}
 
 const SearchInfo = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 35px;
+  padding-bottom: 3.5rem;
+  ${applyMediaQuery("mobile")} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Text = styled.span`

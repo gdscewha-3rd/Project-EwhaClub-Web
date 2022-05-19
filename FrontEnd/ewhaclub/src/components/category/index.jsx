@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import styled from "styled-components";
 import { colors ,fonts} from 'styles/styleObj';
+import { applyMediaQuery } from 'styles/mediaQuery';
+
 const categoryArray = [
     { name: "모두", id: 0 },
     { name: "공연", id: 1 },
@@ -63,12 +65,21 @@ row-gap: 7rem;
 column-gap: 7rem;
 padding: 30px 0;
 
+${applyMediaQuery("tablet")} {
+  width: 40rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+${applyMediaQuery("mobile")} {
+  width: 30rem;
+  grid-template-columns: repeat(2, 1fr);
+}
 `;
 
 const Btn=styled.button`
   width:8rem;
   height: 8rem;
-  line-height: 7rem;
+  margin: auto;
+  line-height: 8rem;
   border-radius: 50%;
 
  background-color:  ${(props) => props.background};

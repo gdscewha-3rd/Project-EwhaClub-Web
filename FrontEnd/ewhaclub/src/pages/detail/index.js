@@ -8,10 +8,9 @@ import { applyMediaQuery } from "styles/mediaQuery";
 const Detail = () => {
   return (
     <StyledRoot>
-
-      <Link to="/">
+      {/* <Link to="/">
         <img src={logo} alt="logo"></img>
-      </Link>
+      </Link>*/}
       <ClubDetail />
     </StyledRoot>
   );

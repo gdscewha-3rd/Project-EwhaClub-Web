@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import dummy from "db/data.json";
 import Clubcard from "components/clubcard";
 import CategoryMenu from "components/category";
-import { getAllClub } from "apis/all.api";
-import { getCategoryClub } from "apis/category.api";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 const Main = () => {
   const [data, setData] = useState([]);
   const [selectedId, setselectedId] = useState(0);
@@ -61,6 +59,7 @@ const Main = () => {
 export default Main;
 
 const StyledRoot = styled.div`
+  font-family: MinSans-Medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,10 +67,18 @@ const StyledRoot = styled.div`
   padding: 12.8rem;
 `;
 
-const List = styled.div`
+export const List = styled.div`
   padding: 3rem 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 6.4rem;
   column-gap: 4.5rem;
+  ${applyMediaQuery("tablet")} {
+    width: 50rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  ${applyMediaQuery("mobile")} {
+    width: 30rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;

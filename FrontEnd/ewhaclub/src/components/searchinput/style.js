@@ -1,9 +1,17 @@
 import style from "styled-components";
 import { colors, fonts, BORDER_RADIUS_3 } from "styles/styleObj";
-
+import { applyMediaQuery } from "styles/mediaQuery";
 export const StyledRoot = style.div`  
   padding: 50px 0;
   width:56rem;
+
+  ${applyMediaQuery("tablet")}{
+    width:50rem;
+  }
+  ${applyMediaQuery("mobile")}{
+    width:30rem;
+  }
+
 `;
 
 export const SearchForm = style.form`     
@@ -25,7 +33,6 @@ export const SearchForm = style.form`
       color:${colors.green.ewha};
       font-size:${fonts.size.regular};
       font-weight:${fonts.weight.regular};
-    
   }
   img{
   object-fit:none;
