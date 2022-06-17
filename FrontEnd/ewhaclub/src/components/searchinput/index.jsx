@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { searchIcon } from "asset/icons";
 import { useHistory } from "react-router-dom";
-import { StyledRoot, SearchForm } from './style';
+import { StyledRoot, SearchForm } from "./style";
 
 const SearchInput = () => {
   const history = useHistory();
@@ -19,7 +19,7 @@ const SearchInput = () => {
     event.preventDefault();
     console.log("onSubmit");
     console.log(input);
-    history.push(`/search?name=${input}`);
+    history.push(`/search/${input}`);
   };
 
   return (

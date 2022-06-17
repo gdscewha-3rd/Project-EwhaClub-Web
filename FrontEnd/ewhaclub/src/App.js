@@ -3,14 +3,13 @@ import { Route, Switch } from "react-router-dom";
 import Main from "pages/main/index";
 import Detail from "pages/detail/index";
 import Result from "pages/result/index";
-import styled from "styled-components";
 
 function AppRouter() {
   return (
     <Switch>
-      <Route exact path="/" component={Main} />
-      <Route path="/club" component={Detail} />
-      <Route path="/search" component={Result} />
+      <Route exact path={["/", "/category/:category?"]} component={Main} />
+      <Route path="/club/:id" component={Detail} />
+      <Route path="/search/:name" component={Result} />
     </Switch>
   );
 }

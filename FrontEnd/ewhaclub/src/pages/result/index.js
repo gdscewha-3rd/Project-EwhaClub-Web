@@ -13,8 +13,11 @@ import { List } from "pages/main";
 
 import dummy from "db/data.json";
 import { applyMediaQuery } from "styles/mediaQuery";
+import ClubcardList from "components/clubcardList";
 
-const Result = () => {
+const Result = ({ match }) => {
+  console.log("search result", match.params.name);
+  const query = match.params.name;
   const [data, setData] = useState([]);
   const location = useLocation();
 
@@ -41,23 +44,13 @@ const Result = () => {
 
         <SearchInput />
         <SearchInfo>
-          <Text weight={`${fonts.weight.bold}`}>'{name}'</Text>
+          <Text weight={`${fonts.weight.bold}`}>'{query}'</Text>
           <Text weight={`${fonts.weight.regular}`}>&nbsp;검색결과 :</Text>
           <Text weight={`${fonts.weight.regular}`}>
             &nbsp;{dummy.data.length}개
           </Text>
         </SearchInfo>
-        {data && (
-          <List>
-            {data.map((club, idx) => (
-              <>
-                <Link to={`/club?id=${club.id}`}>
-                  {<Clubcard key={idx} club={club} />}
-                </Link>
-              </>
-            ))}
-          </List>
-        )}
+        <ClubcardList query={query} />
       </StyledRoot>
     </>
   );
