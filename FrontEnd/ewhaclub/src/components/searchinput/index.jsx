@@ -7,7 +7,7 @@ const SearchInput = () => {
   const history = useHistory();
   const [input, setInput] = useState("");
   const onChange = (event) => {
-    console.log("onChange");
+    //console.log("onChange");
 
     const {
       target: { value },
@@ -17,8 +17,8 @@ const SearchInput = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log("onSubmit");
-    console.log(input);
+    //console.log("onSubmit");
+    //console.log(input);
     history.push(`/search/${input}`);
   };
 

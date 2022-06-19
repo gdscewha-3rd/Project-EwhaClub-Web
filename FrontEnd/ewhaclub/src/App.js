@@ -1,8 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Main from "pages/main/index";
-import Detail from "pages/detail/index";
-import Result from "pages/result/index";
+import Main from "pages/main";
+import Detail from "pages/detail";
+import Result from "pages/result";
+import Error from "pages/404";
 
 function AppRouter() {
   return (
@@ -10,6 +11,7 @@ function AppRouter() {
       <Route exact path={["/", "/category/:category?"]} component={Main} />
       <Route path="/club/:id" component={Detail} />
       <Route path="/search/:name" component={Result} />
+      <Route path="/error" component={Error} />
     </Switch>
   );
 }

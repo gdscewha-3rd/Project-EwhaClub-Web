@@ -10,8 +10,8 @@ import { applyMediaQuery } from "styles/mediaQuery";
 import ClubcardList from "components/clubcardList";
 
 const Main = ({ match }) => {
-  console.log(match);
-  const category = match.params.category || "";
+  console.log("match", match);
+  const category = match.params.category || "clubs";
   //일단 카데고리 모두 선택은 ""로 해둠
   //console.log(category);
 
