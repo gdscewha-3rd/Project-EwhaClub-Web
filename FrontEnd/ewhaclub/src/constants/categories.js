@@ -9,4 +9,4 @@ export const categories = [
   { name: "학술", id: 7 },
 ];
 
-//카테고리 상수
+//카테고리 상수 느학
