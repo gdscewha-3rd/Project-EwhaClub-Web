@@ -1,15 +1,16 @@
-import logo from "asset/icons/logo.png";
+import { LogoIcon } from "asset/icons";
 import ClubDetail from "components/detail";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
 
 // 선택한 동아리의 data를 어떻게 들고오지?
-const Detail = () => {
+const Detail = ({ match }) => {
+  console.log("선택한 동아링 아이디", match.params.id);
   return (
     <StyledRoot>
       <Link to="/">
-        <img src={logo} alt="logo"></img>
+        <img src={LogoIcon} alt="logo"></img>
       </Link>
       <ClubDetail />
     </StyledRoot>

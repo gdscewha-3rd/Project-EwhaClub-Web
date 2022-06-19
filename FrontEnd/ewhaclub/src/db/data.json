@@ -1,86 +1,86 @@
 {
-    "code": "200",
-    "msg": "ok",
-    "data": [
-      {
-        "id": 0,
-        "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-        "name": "영화패 누에",
-        "category_name": "공연",
-        "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 1,
-        "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
-        "name": "쏨",
-        "category_name": "체육",
-        "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 2,
-        "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-        "name": "영화패 누에",
-        "category_name": "공연",
-        "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 3,
-        "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
-        "name": "쏨",
-        "category_name": "체육",
-        "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-        "is_recruiting": 1
-      },
-      {
-        "id": 4,
-        "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-        "name": "영화패 누에",
-        "category_name": "공연",
-        "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 5,
-        "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
-        "name": "쏨",
-        "category_name": "체육",
-        "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-        "is_recruiting": 1
-      },
-      {
-        "id": 6,
-        "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-        "name": "영화패 누에",
-        "category_name": "공연",
-        "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 7,
-        "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
-        "name": "쏨",
-        "category_name": "체육",
-        "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-        "is_recruiting": 0
-      },
-      {
-        "id": 8,
-        "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
-        "name": "영화패 누에",
-        "category_name": "공연",
-        "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
-        "is_recruiting": 1
-      },
-      {
-        "id": 9,
-        "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
-        "name": "쏨",
-        "category_name": "체육",
-        "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-        "is_recruiting": 0
-      }
-    ]
-  }
+  "code": "200",
+  "msg": "ok",
+  "data": [
+    {
+      "id": 0,
+      "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
+      "name": "영화패 누에",
+      "category": 1,
+      "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 1,
+      "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
+      "name": "쏨",
+      "category": 2,
+      "short_description": "교내 유일의 사격동아리 SSOM입니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 2,
+      "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
+      "name": "영화패 누에",
+      "category": 3,
+      "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 3,
+      "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
+      "name": "쏨",
+      "category": 4,
+      "short_description": "교내 유일의 사격동아리 SSOM입니다.",
+      "is_recruiting": 1
+    },
+    {
+      "id": 4,
+      "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
+      "name": "영화패 누에",
+      "category": 5,
+      "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 5,
+      "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
+      "name": "쏨",
+      "category": 6,
+      "short_description": "교내 유일의 사격동아리 SSOM입니다.",
+      "is_recruiting": 1
+    },
+    {
+      "id": 6,
+      "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
+      "name": "영화패 누에",
+      "category": 7,
+      "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 7,
+      "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
+      "name": "쏨",
+      "category": 1,
+      "short_description": "교내 유일의 사격동아리 SSOM입니다.",
+      "is_recruiting": 0
+    },
+    {
+      "id": 8,
+      "main_img_url": "https://cdn.univ20.com/wp-content/uploads/2015/06/21168405ba71388a2fed9cc5b3af8e43.png",
+      "name": "영화패 누에",
+      "category": 2,
+      "short_description": "영화패 누에는 여성문제와 구체적인 사회현실의 모순을 영상으로 제작하고 있습니다.",
+      "is_recruiting": 1
+    },
+    {
+      "id": 9,
+      "main_img_url": "https://media.cntraveler.com/photos/593ab456f2125a2b5b9ed232/16:9/w_1280,c_limit/MCDMYNE_EC003_H.JPG\",,",
+      "name": "쏨",
+      "category": 3,
+      "short_description": "교내 유일의 사격동아리 SSOM입니다.",
+      "is_recruiting": 0
+    }
+  ]
+}

@@ -1,22 +1,39 @@
-import React, { useState } from "react";
-import logo from "asset/icons/logo.png";
+import React, { useEffect, useState } from "react";
+import { LogoIcon } from "asset/icons";
 import styled from "styled-components";
 import SearchInput from "components/searchinput";
-const Main = () => {
+import { Link } from "react-router-dom";
+import dummy from "db/data.json";
+import Clubcard from "components/clubcard";
+import CategoryMenu from "components/category";
+import { applyMediaQuery } from "styles/mediaQuery";
+import ClubcardList from "components/clubcardList";
+
+const Main = ({ match }) => {
+  console.log(match);
+  const category = match.params.category || "";
+  //일단 카데고리 모두 선택은 ""로 해둠
+  //console.log(category);
+
   return (
-    <Section>
-      <img src={logo} alt="logo"></img>
+    <StyledRoot>
+      <Link to={`/`}>
+        <img src={LogoIcon} alt="logo"></img>
+      </Link>
       <SearchInput />
-    </Section>
+      <CategoryMenu />
+      <ClubcardList category={category} />
+    </StyledRoot>
   );
 };
 
 export default Main;
 
-const Section = styled.div`
+const StyledRoot = styled.div`
+  font-family: MinSans-Medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 128px;
+  padding: 12.8rem;
 `;
