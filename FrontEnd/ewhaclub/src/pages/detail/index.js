@@ -11,7 +11,6 @@ const Detail = () => {
       <Link to="/">
         <img src={logo} alt="logo"></img>
       </Link>
-
       <ClubDetail />
     </StyledRoot>
   );
