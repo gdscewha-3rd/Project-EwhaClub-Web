@@ -16,7 +16,7 @@
       "name": "쏨",
       "category": 2,
       "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-      "is_recruiting": 0
+      "is_recruiting": 1
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
       "name": "쏨",
       "category": 4,
       "short_description": "교내 유일의 사격동아리 SSOM입니다.",
-      "is_recruiting": 1
+      "is_recruiting": 2
     },
     {
       "id": 4,
