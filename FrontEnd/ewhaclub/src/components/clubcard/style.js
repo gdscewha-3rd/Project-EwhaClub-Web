@@ -74,7 +74,7 @@ export const Description = styled.div`
 `;
 
 export const Category = styled.span`
-  font-family: MinSans-Light;
+  //font-family: MinSans-Light;
   font-size: ${fonts.size.small};
   font-weight: ${fonts.weight.light};
   color: ${colors.black.origin};
@@ -82,20 +82,21 @@ export const Category = styled.span`
 
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
+  border: 0.1rem solid ${(props) => props.color};
   padding: 0.3rem 0.6rem;
   margin-right: 0.8rem;
 `;
 
 export const State = styled.span`
-  font-family: MinSans-Light;
+  //font-family: MinSans-Light;
   font-size: ${fonts.size.small};
   font-weight: ${fonts.weight.regular};
-  color: ${colors.black.origin};
-  background-color: ${colors.black.light_grey_1};
+  color: ${(props) => props.fontColor};
+
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
-  background-color: ${(props) => props.color.color};
-  border: 0.1rem solid ${(props) => props.color.border};
+  background-color: ${(props) => props.color};
+  border: 0.1rem solid ${(props) => props.border};
   padding: 0.3rem 0.6rem;
 `;
 

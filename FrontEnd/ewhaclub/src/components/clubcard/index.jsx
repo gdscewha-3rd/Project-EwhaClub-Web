@@ -40,7 +40,11 @@ const Clubcard = ({ club }) => {
           <Category color={categories[club.category].color}>
             {categories[club.category].name}
           </Category>
-          <State color={state[club.is_recruiting].color}>
+          <State
+            color={state[club.is_recruiting].color}
+            fontColor={state[club.is_recruiting].fontColor}
+            border={state[club.is_recruiting].border}
+          >
             {state[club.is_recruiting].name}
           </State>
         </InfoWrap>
