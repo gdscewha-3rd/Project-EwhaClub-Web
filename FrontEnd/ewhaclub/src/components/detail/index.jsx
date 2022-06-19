@@ -9,30 +9,35 @@ import DetailHeader from "./DetailHeader";
 import DetailInfo from "./DetailInfo";
 
 const ClubDetail = () => {
-  const [club, setClub] = useState([]);
-  // const location = useLocation();
+    const [club, setClub] = useState([]);
+    // const location = useLocation();
 
-  // const { id } = QueryString.parse(location.search, {
-  //   ignoreQueryPrefix: true,
-  // });
+    // const { id } = QueryString.parse(location.search, {
+    //   ignoreQueryPrefix: true,
+    // });
 
-  const setClubData = async () => {
-    // const club = await getClubData(id);
-    // setClub(club);
-    setClub(dummy.data[0]);
-  };
+    // const setClubData = () => {
+    //     // const club = await getClubData(id);
+    //     // setClub(club);
+    //     setClub();
+    // };
 
-  useEffect(() => {
-    setClubData();
-  }, []);
+    useEffect(() => {
+        setClub(dummy.data);
+        console.log(dummy.data);
+    }, []);
 
-  return (
-    <StyledRoot>
-      <DetailHeader club={club} />
-      <Line />
-      <DetailInfo club={club} />
-    </StyledRoot>
-  );
+    return (
+        <>
+            {club && (
+                <StyledRoot>
+                    <DetailHeader club={club} />
+                    <Line />
+                    <DetailInfo club={club} />
+                </StyledRoot>
+            )}
+        </>
+    );
 };
 
 export default ClubDetail;

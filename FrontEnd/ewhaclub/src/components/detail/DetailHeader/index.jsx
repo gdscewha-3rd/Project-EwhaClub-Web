@@ -17,7 +17,7 @@ import { categories } from "constants/categories";
 import { state } from "constants/state";
 
 const DetailHeader = ({ club }) => {
-    console.log("세부" + club);
+    console.log("세부", club);
     return (
         <StyledRoot>
             <LeftSection>
