@@ -26,7 +26,7 @@ export const Thumbnail = styled.div`
   /*로고 : 512 x 288*/
   width: 100%;
   height: 50%;
-  padding-bottom: 15px;
+  padding-bottom: 1.5rem;
   img {
     width: 100%;
     height: 100%;
@@ -44,13 +44,13 @@ export const SubContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid ${colors.black.light_origin};
-  padding-top: 10px;
+  border-top: 0.1rem solid ${colors.black.light_origin};
+  padding-top: 1rem;
 `;
 export const InfoWrap = styled.div`
   display: flex;
   flex-direction: row;
-  line-height: 19px;
+  line-height: 1.9rem;
 `;
 
 export const LikesWrap = styled.div`
@@ -59,16 +59,14 @@ export const LikesWrap = styled.div`
 `;
 
 export const Title = styled.div`
-  font-family: MinSans-Medium;
   font-size: ${fonts.size.regular};
   font-weight: ${fonts.weight.bold};
   color: ${colors.black.origin};
-  padding-bottom: 12px;
+  padding-bottom: 1.2rem;
   //line-height: 21px;
 `;
 
 export const Description = styled.div`
-  font-family: MinSans-Medium;
   font-size: ${fonts.size.small};
   font-weight: ${fonts.weight.regular};
   color: ${colors.black.origin};
@@ -84,8 +82,8 @@ export const Category = styled.span`
 
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
-  padding: 3px 6px;
-  margin-right: 8px;
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.8rem;
 `;
 
 export const State = styled.span`
@@ -97,13 +95,13 @@ export const State = styled.span`
   text-align: center;
   border-radius: ${BORDER_RADIUS_2};
   background-color: ${(props) => props.color.color};
-  border: 1px solid ${(props) => props.color.border};
-  padding: 3px 6px;
+  border: 0.1rem solid ${(props) => props.color.border};
+  padding: 0.3rem 0.6rem;
 `;
 
 export const LikesImg = styled.img`
   object-fit: none;
-  padding-right: 5px;
+  padding-right: 0.5rem;
 `;
 
 /*const LikesCnt = styled.p`

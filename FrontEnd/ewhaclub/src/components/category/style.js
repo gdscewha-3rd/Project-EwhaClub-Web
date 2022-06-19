@@ -7,7 +7,7 @@ export const StyledRoot = styled.div`
   grid-template-columns: repeat(4, 1fr);
   row-gap: 7rem;
   column-gap: 7rem;
-  padding: 30px 0;
+  padding: 3rem 0;
 `;
 
 export const Btn = styled.button`
