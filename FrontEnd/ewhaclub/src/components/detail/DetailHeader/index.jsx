@@ -14,9 +14,10 @@ import {
 } from "./style";
 import { EmptyHeart, FaceBookIcon, InstaIcon, YoutubeIcon } from "asset/icons";
 import { categories } from "constants/categories";
-import { state_color } from "constants/state";
+import { state } from "constants/state";
 
 const DetailHeader = ({ club }) => {
+    console.log("세부" + club);
     return (
         <StyledRoot>
             <LeftSection>
@@ -39,8 +40,11 @@ const DetailHeader = ({ club }) => {
                     <Category color={categories[club.category_id].color}>
                         {categories[club.category_id].name}
                     </Category>
-                    <State color={state_color[club.is_recruiting]}>
-                        {club.is_recruiting ? "모집중" : "모집마감"}
+                    <State
+                        color={state[club.is_recruiting].color}
+                        fontColor={state[club.category_id].fontColor}
+                    >
+                        {state[club.category_id].name}
                     </State>
                 </TagsWrapper>
             </LeftSection>
