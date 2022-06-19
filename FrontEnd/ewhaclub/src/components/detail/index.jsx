@@ -1,39 +1,32 @@
 import { Line, StyledRoot } from "./style";
-// import { useLocation } from "react-router-dom";
-// import QueryString from "qs";
-// import { getClubData } from "apis/detail.api";
+import { getClubData } from "apis/detail.api";
 import { useEffect, useState } from "react";
 import dummy from "db/detailData.json";
 
 import DetailHeader from "./DetailHeader";
 import DetailInfo from "./DetailInfo";
 
-const ClubDetail = () => {
-    const [club, setClub] = useState([]);
-    // const location = useLocation();
+const ClubDetail = ({ id }) => {
+    // 서버 제대로 연결되면, 초기값 빈 배열로 바꿔놓기!!
+    const [club, setClub] = useState(dummy.data);
 
-    // const { id } = QueryString.parse(location.search, {
-    //   ignoreQueryPrefix: true,
-    // });
-
-    // const setClubData = () => {
-    //     // const club = await getClubData(id);
-    //     // setClub(club);
-    //     setClub();
-    // };
+    const setClubData = async () => {
+        const club = await getClubData(id);
+        console.log(club);
+        setClub(club);
+    };
 
     useEffect(() => {
-        setClub(dummy.data);
-        console.log(dummy.data);
+        setClubData();
     }, []);
 
     return (
         <>
             {club && (
                 <StyledRoot>
-                    <DetailHeader club={club} />
+                    <DetailHeader club={club[0]} />
                     <Line />
-                    <DetailInfo club={club} />
+                    <DetailInfo club={club[0]} />
                 </StyledRoot>
             )}
         </>

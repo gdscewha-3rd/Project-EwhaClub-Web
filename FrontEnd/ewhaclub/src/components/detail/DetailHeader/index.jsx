@@ -42,9 +42,9 @@ const DetailHeader = ({ club }) => {
                     </Category>
                     <State
                         color={state[club.is_recruiting].color}
-                        fontColor={state[club.category_id].fontColor}
+                        fontColor={state[club.is_recruiting].fontColor}
                     >
-                        {state[club.category_id].name}
+                        {state[club.is_recruiting].name}
                     </State>
                 </TagsWrapper>
             </LeftSection>
