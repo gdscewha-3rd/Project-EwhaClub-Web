@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { LogoIcon } from "asset/icons";
 import styled from "styled-components";
-import SearchInput from "components/searchinput";
+import SearchInput from "components/common/searchinput";
 import { Link } from "react-router-dom";
 import CategoryMenu from "components/category";
 import ClubcardList from "components/common/clubcardList";
 
-const Main = ({ match }) => {
+function Main({ match }) {
     const category = match.params.category || "clubs";
     //일단 카데고리 모두 선택은 ""로 해둠
 
@@ -20,7 +20,7 @@ const Main = ({ match }) => {
             <ClubcardList category={category} />
         </StyledRoot>
     );
-};
+}
 
 export default Main;
 
