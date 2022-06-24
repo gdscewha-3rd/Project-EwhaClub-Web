@@ -4,9 +4,9 @@ import { applyMediaQuery } from "styles/mediaQuery";
 export const List = styled.div`
   padding: 3rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   row-gap: 6.4rem;
-  column-gap: 4.5rem;
+  column-gap: 2.5rem;
 
   ${applyMediaQuery("tablet")} {
     width: 50rem;

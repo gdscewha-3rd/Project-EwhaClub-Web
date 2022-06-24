@@ -22,6 +22,7 @@ const SearchInput = () => {
           type="text"
           id="input"
           placeholder="벗들이 원하는 동아리가 있나요?"
+          size="medium"
           {...input}
         />
       </SearchForm>

@@ -20,11 +20,14 @@ export const SearchForm = style.form`
   text-align: center;
   margin: 0 auto;
   width:100%;
-  height:44px;
   border-radius:${BORDER_RADIUS_3};
   border : 1px solid ${colors.green.ewha};
   padding:5px 10px;
   background-color:${colors.white.origin};
+  input{
+    margin:0;
+    padding:0;
+  }
   img{
   object-fit:none;
   }
