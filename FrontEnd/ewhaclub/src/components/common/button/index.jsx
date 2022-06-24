@@ -36,7 +36,7 @@ export const sizeStyles = css`
     //404 페이지 버튼
     css`
       height: 7.5rem;
-      width: 40rem;
+      width: 30rem;
 
       ${applyMediaQuery("mobile")} {
         width: 30rem;

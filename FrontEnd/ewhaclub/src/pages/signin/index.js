@@ -10,6 +10,8 @@ import { IsEwha } from "utils/validation";
 import ErrorDescritption from "components/error/errorDescription";
 import { SignIn } from "apis/signin.api";
 import { useHistory } from "react-router-dom";
+import { useAuth } from "utils/auth";
+import Likes from "pages/likes";
 
 const Login = () => {
   const email = useInput();
@@ -17,7 +19,7 @@ const Login = () => {
   const didMountRef = useRef();
   const [error, setError] = useState({ email: "", password: "" });
   const [disabled, setDisabled] = useState(true);
-  const history = useHistory();
+  const { auth, login } = useAuth();
 
   const checkError = () => {
     let _errorEmail = "";
@@ -42,8 +44,8 @@ const Login = () => {
       };
       const response = await SignIn(form);
       if (response) {
-        console.log(response);
-        history.push("/");
+        console.log("토큰 발급", response);
+        login(response, form.email.split("@")[0]);
       } else {
         throw Error("존재하지 않는 계정입니다!!");
       }

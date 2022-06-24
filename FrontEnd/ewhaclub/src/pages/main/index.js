@@ -7,6 +7,7 @@ import CategoryMenu from "components/category";
 import ClubcardList from "components/common/clubcardList";
 import { getAllClub } from "apis/all.api";
 import { getCategoryClub } from "apis/category.api";
+import Navbar from "components/navbar";
 
 function Main({ match }) {
   const category = match.params.category || "clubs";
@@ -29,15 +30,19 @@ function Main({ match }) {
   }, [category]);
 
   return (
-    <StyledRoot>
-      <Link to={`/`}>
-        <img src={LogoIcon} alt="logo" />
-      </Link>
-      <SearchInput />
-      <CategoryMenu />
+    <>
+      {" "}
+      <StyledRoot>
+        <Navbar />
+        <Link to={`/`}>
+          <img src={LogoIcon} alt="logo" />
+        </Link>
+        <SearchInput />
+        <CategoryMenu />
 
-      {data && <ClubcardList data={data} />}
-    </StyledRoot>
+        {data && <ClubcardList data={data} width={100} />}
+      </StyledRoot>
+    </>
   );
 }
 
@@ -49,5 +54,5 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem;
+  padding: 0 12.8rem;
 `;

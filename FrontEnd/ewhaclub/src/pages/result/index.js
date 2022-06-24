@@ -10,6 +10,7 @@ import { fonts } from "styles/styleObj";
 import { getSearchData } from "apis/search.api";
 import { applyMediaQuery } from "styles/mediaQuery";
 import ClubcardList from "components/common/clubcardList";
+import Navbar from "components/navbar";
 
 const Result = ({ match }) => {
   //console.log("search result", match.params.name);
@@ -27,6 +28,8 @@ const Result = ({ match }) => {
 
   return (
     <>
+      {" "}
+      <Navbar />
       <StyledRoot>
         <Link to="/">
           <img src={LogoIcon} alt="logo"></img>
