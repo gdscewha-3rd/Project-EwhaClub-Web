@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ErrorImg from "components/errorImg";
-import ErrorDescription from "components/errorDescription";
+import ErrorImg from "components/error/errorImg";
+import ErrorDescription from "components/error/errorDescription";
 import styled from "styled-components";
+import { applyMediaQuery } from "styles/mediaQuery";
 import { fonts, colors } from "styles/styleObj";
 import Button from "components/common/button";
 
@@ -15,7 +16,7 @@ const Error = () => {
         fontWeight={fonts.weight.bold}
       />
       <ErrorDescription
-        text={"하지만 학문관 귀염둥이 뽀미를 만나셨습니다:)"}
+        text={"하지만 귀염둥이 뽀미를 만나셨습니다:)"}
         fontWeight={fonts.weight.medium}
       />
 

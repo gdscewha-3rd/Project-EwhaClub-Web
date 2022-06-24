@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledRoot } from "components/errorImg/style";
+import { StyledRoot } from "components/error/errorImg/style";
 import { Bomi } from "asset/icons";
 
 const ErrorImg = () => {

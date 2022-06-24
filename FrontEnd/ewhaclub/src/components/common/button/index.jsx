@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { fonts } from "styles/styleObj";
+import { applyMediaQuery } from "styles/mediaQuery";
 const Button = ({ title, fontColor, backgroundColor, size }) => {
   return (
     <StyledRoot
@@ -23,6 +24,9 @@ const sizeStyles = css`
       height: 7.5rem;
       width: 40.1rem;
       margin: 2.2rem 0;
+      ${applyMediaQuery("mobile")} {
+        width: 30rem;
+      }
     `}
 
   ${(props) =>
