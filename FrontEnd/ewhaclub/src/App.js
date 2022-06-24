@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 import Main from "pages/main";
 import Detail from "pages/detail";
 import Result from "pages/result";
-
-import Login from "pages/login";
+import SignUp from "pages/signUp";
+import Login from "pages/signin";
 
 function AppRouter() {
   return (
@@ -13,6 +13,7 @@ function AppRouter() {
       <Route path="/club/:id" component={Detail} />
       <Route path="/search/:name" component={Result} />
       <Route path="/login" component={Login} />
+      <Route path="/signup" component={SignUp} />
     </Switch>
   );
 }

@@ -1,6 +1,7 @@
 import style from "styled-components";
 import { colors, fonts, BORDER_RADIUS_3 } from "styles/styleObj";
 import { applyMediaQuery } from "styles/mediaQuery";
+
 export const StyledRoot = style.div`  
   padding: 50px 0;
   width:56rem;

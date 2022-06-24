@@ -1,7 +1,15 @@
 import styled, { css } from "styled-components";
 import { fonts } from "styles/styleObj";
 import { applyMediaQuery } from "styles/mediaQuery";
-const Button = ({ title, fontSize, fontColor, backgroundColor, size }) => {
+const Button = ({
+  title,
+  fontSize,
+  fontColor,
+  backgroundColor,
+  size,
+  disabled,
+  onClick,
+}) => {
   //console.log(fontSize);
   return (
     <StyledRoot
@@ -9,6 +17,8 @@ const Button = ({ title, fontSize, fontColor, backgroundColor, size }) => {
       fontSize={fontSize}
       backgroundColor={backgroundColor}
       size={size}
+      disabled={disabled}
+      onClick={onClick}
     >
       {title}
     </StyledRoot>
@@ -55,5 +65,6 @@ const StyledRoot = styled.button`
   color: ${(props) => props.fontColor};
   border-radius: 1rem;
   border-style: none;
+  opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
   ${sizeStyles}
 `;
