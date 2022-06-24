@@ -41,10 +41,11 @@ const Login = () => {
         password: password.value,
       };
       const response = await SignIn(form);
-      if (!localStorage.getItem("token")) {
-        throw Error("존재하지 않는 계정입니다!!");
-      } else {
+      if (response) {
+        console.log(response);
         history.push("/");
+      } else {
+        throw Error("존재하지 않는 계정입니다!!");
       }
     } catch (e) {
       //console.log(e);

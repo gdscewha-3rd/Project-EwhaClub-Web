@@ -8,10 +8,12 @@ export const SignIn = async (form) => {
     const { data } = await serverAxios.post(`${PREFIX_URL}/signin`, form);
 
     if (data.message !== "non valid account") {
-      localStorage.setItem("token", JSON.stringify(data.message));
+      return data.message;
+      //localStorage.setItem("token", JSON.stringify(data.message));
+    } else {
+      throw Error("존재하지 않는 계정입니다!!");
     }
-    return data.message;
   } catch (err) {
-    return err;
+    return null;
   }
 };
