@@ -2,35 +2,27 @@ import React, { useEffect, useState } from "react";
 import { searchIcon } from "asset/icons";
 import { useHistory } from "react-router-dom";
 import { StyledRoot, SearchForm } from "./style";
+import Input from "../input";
+import useInput from "hooks/useInput";
 
 const SearchInput = () => {
   const history = useHistory();
-  const [input, setInput] = useState("");
-  const onChange = (event) => {
-    //console.log("onChange");
-
-    const {
-      target: { value },
-    } = event;
-    setInput(value);
-  };
+  const input = useInput();
 
   const onSubmit = (event) => {
     event.preventDefault();
-    //console.log("onSubmit");
-    //console.log(input);
-    history.push(`/search/${input}`);
+    history.push(`/search/${input.value}`);
   };
 
   return (
     <StyledRoot>
       <SearchForm onSubmit={onSubmit}>
         <img src={searchIcon} onClick={onSubmit} alt="searchImg" />
-        <input
-          value={input}
-          onChange={onChange}
+        <Input
           type="text"
+          id="input"
           placeholder="벗들이 원하는 동아리가 있나요?"
+          {...input}
         />
       </SearchForm>
     </StyledRoot>
