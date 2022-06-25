@@ -28,12 +28,13 @@ import { useAuth } from "utils/auth";
 import { Link } from "react-router-dom";
 const Clubcard = ({ club }) => {
   //console.log(club);
-  const { auth } = useAuth();
+  const { auth, getLikes } = useAuth();
   const makelike = async () => {
     console.log("좋아요 누르기", club.id);
     if (auth.token) {
       const response = await postlike(auth.token, club.id);
       console.log(response);
+      getLikes(auth.token);
     }
   };
   return (

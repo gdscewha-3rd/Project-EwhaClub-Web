@@ -42,5 +42,4 @@ const StyledRoot = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   padding: 0.8rem;
-  padding-bottom: 12.8rem;
 `;

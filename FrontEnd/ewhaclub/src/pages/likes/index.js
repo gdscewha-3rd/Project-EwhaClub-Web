@@ -9,19 +9,13 @@ import ClubcardList from "components/common/clubcardList";
 import Input from "components/common/input";
 import { colors, BORDER_RADIUS_3 } from "styles/styleObj";
 import Button from "components/common/button";
-import { useLikes } from "utils/requiredAuth";
-const Likes = ({ match, likesArr }) => {
-  console.log("Likes", match.path.replace("/", ""), likesArr);
-  const { auth } = useAuth();
+
+const Likes = ({ match }) => {
+  //console.log("Likes", match.path.replace("/", ""));
+  const { auth, likesArr } = useAuth();
+  //console.log(auth);
 
   const [data, setData] = useState([]);
-
-  /*
-  const getLikes = async () => {
-    const { data } = await likes(auth.token);
-    setData(data);
-    //console.log(data);
-  };*/
 
   useEffect(() => {
     setData(likesArr);
@@ -29,6 +23,7 @@ const Likes = ({ match, likesArr }) => {
   return (
     <>
       <Navbar />
+
       <StyledRoot>
         <Link to={`/`}>
           <img src={LogoIcon} alt="logo" />

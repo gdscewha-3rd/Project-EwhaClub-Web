@@ -1,5 +1,6 @@
 import { useState, createContext, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { likes } from "apis/likes.api";
 
 const AuthContext = createContext(null);
 
@@ -10,10 +11,18 @@ export const AuthProvider = ({ children }) => {
   };
   const history = useHistory();
   const [auth, setAuth] = useState(initialState);
+  const [likesArr, setLikesArr] = useState([]);
 
-  const login = (token, name) => {
+  const getLikes = async (token) => {
+    const { data } = await likes(token);
+    setLikesArr(data);
+    //console.log(data);
+  };
+
+  const login = async (token, name) => {
     console.log("AuthProvider", token, name);
     setAuth({ name: name, token: token });
+    await getLikes(token);
     history.replace("/");
   };
   const logout = (token) => {
@@ -23,7 +32,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ auth, login, logout }}>
+    <AuthContext.Provider value={{ auth, login, logout, likesArr, getLikes }}>
       {children}
     </AuthContext.Provider>
   );

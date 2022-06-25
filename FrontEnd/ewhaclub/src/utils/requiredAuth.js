@@ -10,5 +10,5 @@ export const RequiredAuth = ({ children }) => {
   if (!auth.token) {
     history.push("/login");
   }
-  return { children };
+  return children;
 };
