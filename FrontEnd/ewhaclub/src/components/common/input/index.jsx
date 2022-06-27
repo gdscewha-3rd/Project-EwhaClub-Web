@@ -1,7 +1,17 @@
 import React from "react";
 import { StyledRoot } from "./style";
 
-const Input = ({ value, onChange, type, placeholder, borderRadius, borderColor, color, size }) => {
+const Input = ({
+    disabled,
+    value,
+    onChange,
+    type,
+    placeholder,
+    borderRadius,
+    borderColor,
+    color,
+    size,
+}) => {
     return (
         <StyledRoot
             value={value}
@@ -12,6 +22,7 @@ const Input = ({ value, onChange, type, placeholder, borderRadius, borderColor, 
             borderColor={borderColor}
             color={color}
             size={size}
+            disabled={disabled}
         />
     );
 };

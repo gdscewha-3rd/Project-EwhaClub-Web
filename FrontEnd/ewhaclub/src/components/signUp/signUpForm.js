@@ -16,12 +16,15 @@ export default function SignUpForm() {
     const [errorEmail, setErrorEmail] = useState("");
     const navigate = useNavigate();
     const [disabled, setDisabled] = useState(true);
+    const [nickNameDisabled, setNickNameDisabled] = useState(false);
+    const [emailDisabled, setEmailDisabled] = useState(false);
 
     const handleNickName = async () => {
         const form = { checkName: nickName.value };
         const response = await postCheckNickName(form);
         if (response === "not existed nickname") {
             setErrorNickName("사용가능한 닉네임입니다");
+            setNickNameDisabled(true);
         } else if (response === "already existed nickname") {
             setErrorNickName("이미 사용중인 닉네임입니다");
         }
@@ -37,12 +40,13 @@ export default function SignUpForm() {
                 setErrorEmail("이미 사용중인 이메일입니다");
             } else if (response === "not existed email") {
                 setErrorEmail("사용가능한 이메일입니다");
+                setEmailDisabled(true);
             }
         }
     };
 
     const signUp = async () => {
-        const form = { email: email.value, password: password.value, nickName: nickName.value };
+        const form = { email: email.value, password: password.value, nickname: nickName.value };
         const response = await postSignUp(form);
         if (response === "sign-up success") {
             navigate("/login");
@@ -51,15 +55,9 @@ export default function SignUpForm() {
 
     useEffect(() => {
         setDisabled(
-            !(
-                errorNickName === "사용가능한 닉네임입니다" &&
-                errorEmail === "사용가능한 이메일입니다" &&
-                email.value &&
-                password.value &&
-                nickName.value
-            )
+            !(nickNameDisabled && emailDisabled && email.value && password.value && nickName.value)
         );
-    }, [email.value, password.value, nickName.value, errorNickName, errorEmail]);
+    }, [email.value, password.value, nickName.value, nickNameDisabled, emailDisabled]);
     return (
         <StFormSection>
             <StFormContainer>
@@ -72,6 +70,7 @@ export default function SignUpForm() {
                         borderRadius={BORDER_RADIUS_1}
                         borderColor={colors.green.ewha}
                         size="medium"
+                        disabled={nickNameDisabled}
                         {...nickName}
                     />
                     {errorNickName && <p>{errorNickName}</p>}
@@ -93,6 +92,7 @@ export default function SignUpForm() {
                         borderRadius={BORDER_RADIUS_1}
                         borderColor={colors.green.ewha}
                         size="medium"
+                        disabled={emailDisabled}
                         {...email}
                     />
                     {errorEmail && <p>{errorEmail}</p>}
