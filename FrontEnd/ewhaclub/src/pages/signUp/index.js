@@ -8,13 +8,18 @@ function SignUp() {
     return (
         <StyledRoot>
             <img src={LogoIcon} alt="logo" />
-            <StForm onSubmit={handleSubmit(submitForm)}>
-                <SignUpForm />
-            </StForm>
+            <SignUpForm />
         </StyledRoot>
     );
 }
 
 export default SignUp;
 
-const StyledRoot = styled.div``;
+const StyledRoot = styled.div`
+    font-family: MinSans-Medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12.8rem 0;
+`;

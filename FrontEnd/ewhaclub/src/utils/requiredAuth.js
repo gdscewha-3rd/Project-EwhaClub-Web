@@ -1,14 +1,14 @@
 import { useAuth } from "./auth";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const RequiredAuth = ({ children }) => {
-  const { auth } = useAuth();
-  const history = useHistory();
+    const { auth } = useAuth();
+    const history = useNavigate();
 
-  //console.log(auth);
+    //console.log(auth);
 
-  if (!auth.token) {
-    history.push("/login");
-  }
-  return children;
+    if (!auth.token) {
+        history.push("/login");
+    }
+    return children;
 };
