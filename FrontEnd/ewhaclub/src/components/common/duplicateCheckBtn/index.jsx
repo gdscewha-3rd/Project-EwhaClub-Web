@@ -56,7 +56,7 @@ export const sizeStyles = css`
         `}
 `;
 
-const StyledRoot = styled.DuplicateCheckBtn`
+const StyledRoot = styled.div`
     font-size: ${(props) => (props.fontSize ? props.fontSize : fonts.size.medium)};
     font-weight: ${fonts.weight.bold};
     background-color: ${(props) => props.backgroundColor};

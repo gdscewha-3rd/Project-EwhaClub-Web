@@ -5,7 +5,7 @@ import styled from "styled-components";
 import useInput from "hooks/useInput";
 import Input from "components/common/input";
 import { BORDER_RADIUS_1, colors, fonts } from "styles/styleObj";
-import Button from "components/common/duplicateCheckBtn";
+import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 import { IsEwha } from "utils/validation";
 import ErrorDescritption from "components/error/errorDescription";
 import { SignIn } from "apis/signin.api";
@@ -95,7 +95,7 @@ const Login = () => {
                 {...password}
             />
             {error.password ? <ErrorDescritption text={error.password} /> : null}
-            <Button
+            <DuplicateCheckBtn
                 title="로그인"
                 fontColor={colors.black.light_grey_3}
                 fontSize={fonts.size.regular}
@@ -105,7 +105,7 @@ const Login = () => {
                 disabled={disabled}
             />
             <Link to={`/signup`}>
-                <Button
+                <DuplicateCheckBtn
                     title="회원가입"
                     fontColor={colors.white.origin}
                     fontSize={fonts.size.regular}
@@ -114,7 +114,7 @@ const Login = () => {
                 />
             </Link>
 
-            <Button
+            <DuplicateCheckBtn
                 title="중복확인"
                 fontColor={colors.black.light_grey_3}
                 fontSize={fonts.size.regular}

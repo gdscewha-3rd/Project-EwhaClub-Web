@@ -13,14 +13,13 @@ function AppRouter() {
     return (
         <AuthProvider>
             <Routes>
-                <Route exact path={["/", "/category/:category?"]} component={Main} />
-                <Route path="/club/:id" component={Detail} />
-                <Route path="/search/:name" component={Result} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={SignUp} />
-                <RequiredAuth>
-                    <Route path="/likes" component={Likes} />
-                </RequiredAuth>
+                <Route path="/likes" element={<Likes />} />
+                <Route path="/club/:id" element={<Detail />} />
+                <Route path="/search/:name" element={<Result />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path={"/category/:category?"} element={<Main />} />
+                <Route exact path={"/"} component={<Main />} />
             </Routes>
         </AuthProvider>
     );
