@@ -4,15 +4,18 @@ import styled from "styled-components";
 import SearchInput from "components/common/searchinput";
 import { Link } from "react-router-dom";
 import CategoryMenu from "components/category";
+import { useParams } from "react-router-dom";
 import ClubcardList from "components/common/clubcardList";
 import { getAllClub } from "apis/all.api";
 import { getCategoryClub } from "apis/category.api";
 import Navbar from "components/navbar";
+import Loading from "components/common/loading";
 
-function Main({ match }) {
-  const category = match.params.category || "clubs";
-
+function Main() {
+  const params = useParams();
+  const category = params.category || "clubs";
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getClubs = async () => {
     const { data } =
@@ -20,11 +23,13 @@ function Main({ match }) {
         ? await getAllClub()
         : await getCategoryClub(category);
     setData(data);
+    setLoading(false);
     console.log(data);
   };
 
   useEffect(() => {
     if (category) {
+      setLoading(true);
       getClubs();
     }
   }, [category]);
@@ -39,8 +44,9 @@ function Main({ match }) {
         </Link>
         <SearchInput />
         <CategoryMenu />
+        {loading && <Loading />}
 
-        {data && <ClubcardList data={data} width={100} />}
+        {!loading && data && <ClubcardList data={data} />}
       </StyledRoot>
     </>
   );

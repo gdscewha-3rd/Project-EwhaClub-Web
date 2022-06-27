@@ -11,8 +11,8 @@ const CategoryMenu = () => {
       {categories.map((c, idx) => (
         <Btn
           key={idx}
-          activeClassName="active"
-          exact={true}
+          className={(navData) => (navData.isActive ? "active-style" : "none")}
+          exact="true"
           to={c.name === "모두" ? "/" : `/category/${c.id}`}
         >
           {c.name}
