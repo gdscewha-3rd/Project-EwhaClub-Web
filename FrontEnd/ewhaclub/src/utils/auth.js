@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
         name: null,
         token: null,
     };
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [auth, setAuth] = useState(initialState);
     const [likesArr, setLikesArr] = useState([]);
 
@@ -23,12 +23,12 @@ export const AuthProvider = ({ children }) => {
         console.log("AuthProvider", token, name);
         setAuth({ name: name, token: token });
         await getLikes(token);
-        history.replace("/");
+        navigate("/");
     };
     const logout = (token) => {
         console.log("로그아웃");
         setAuth(initialState);
-        history.push("/");
+        navigate("/");
     };
 
     return (

@@ -7,7 +7,6 @@ import SignUp from "pages/signUp";
 import Login from "pages/signin";
 import Likes from "pages/likes";
 import { AuthProvider } from "utils/auth";
-import { RequiredAuth } from "utils/requiredAuth";
 
 function AppRouter() {
     return (
