@@ -56,6 +56,8 @@ export const InfoWrap = styled.div`
 export const LikesWrap = styled.div`
   display: flex;
   align-items: center;
+
+  cursor: pointer;
 `;
 
 export const Title = styled.div`

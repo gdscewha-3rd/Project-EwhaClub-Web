@@ -23,18 +23,32 @@ import {
 import { HeartIcon } from "asset/icons";
 import { categories } from "constants/categories";
 import { state } from "constants/state";
-
+import { postlike } from "apis/postlike.api";
+import { useAuth } from "utils/auth";
+import { Link } from "react-router-dom";
 const Clubcard = ({ club }) => {
-  //console.log(state[club.category].name);
+  //console.log(club);
+  const { auth, getLikes } = useAuth();
+  const makelike = async () => {
+    console.log("좋아요 누르기", club.id);
+    if (auth.token) {
+      const response = await postlike(auth.token, club.id);
+      console.log(response);
+      getLikes(auth.token);
+    }
+  };
   return (
     <StyledRoot>
       <Thumbnail>
         <img src={club.main_img_url} alt={club.name}></img>
       </Thumbnail>
-      <MainContainer>
-        <Title>{club.name}</Title>
-        <Description>{club.short_description}</Description>
-      </MainContainer>
+      <Link to={`/club/${club.id}`}>
+        <MainContainer>
+          <Title>{club.name}</Title>
+          <Description>{club.short_description}</Description>
+        </MainContainer>
+      </Link>
+
       <SubContainer>
         <InfoWrap>
           <Category color={categories[club.category].color}>
@@ -48,7 +62,8 @@ const Clubcard = ({ club }) => {
             {state[club.is_recruiting].name}
           </State>
         </InfoWrap>
-        <LikesWrap>
+
+        <LikesWrap onClick={makelike}>
           <LikesImg src={HeartIcon} />
 
           {/*<LikesCnt>65</LikesCnt>*/}

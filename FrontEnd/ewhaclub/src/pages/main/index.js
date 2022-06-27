@@ -5,30 +5,54 @@ import SearchInput from "components/common/searchinput";
 import { Link } from "react-router-dom";
 import CategoryMenu from "components/category";
 import ClubcardList from "components/common/clubcardList";
+import { getAllClub } from "apis/all.api";
+import { getCategoryClub } from "apis/category.api";
+import Navbar from "components/navbar";
 
 function Main({ match }) {
-    const category = match.params.category || "clubs";
-    //일단 카데고리 모두 선택은 ""로 해둠
+  const category = match.params.category || "clubs";
 
-    return (
-        <StyledRoot>
-            <Link to={`/`}>
-                <img src={LogoIcon} alt="logo" />
-            </Link>
-            <SearchInput />
-            <CategoryMenu />
-            <ClubcardList category={category} />
-        </StyledRoot>
-    );
+  const [data, setData] = useState([]);
+
+  const getClubs = async () => {
+    const { data } =
+      category === "clubs"
+        ? await getAllClub()
+        : await getCategoryClub(category);
+    setData(data);
+    console.log(data);
+  };
+
+  useEffect(() => {
+    if (category) {
+      getClubs();
+    }
+  }, [category]);
+
+  return (
+    <>
+      {" "}
+      <StyledRoot>
+        <Navbar />
+        <Link to={`/`}>
+          <img src={LogoIcon} alt="logo" />
+        </Link>
+        <SearchInput />
+        <CategoryMenu />
+
+        {data && <ClubcardList data={data} width={100} />}
+      </StyledRoot>
+    </>
+  );
 }
 
 export default Main;
 
 const StyledRoot = styled.div`
-    font-family: MinSans-Medium;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 12.8rem;
+  font-family: MinSans-Medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12.8rem;
 `;
