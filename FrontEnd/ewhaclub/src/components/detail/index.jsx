@@ -12,7 +12,6 @@ const ClubDetail = ({ id }) => {
 
     const setClubData = async () => {
         const club = await getClubData(id);
-        console.log(club);
         setClub(club);
     };
 
