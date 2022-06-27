@@ -61,11 +61,10 @@ export default function SignUpForm() {
     return (
         <StFormSection>
             <StFormContainer>
-                <NickNameWrapper>
+                <StInputWrapper>
                     <p>닉네임</p>
                     <Input
                         type="text"
-                        id="nickName"
                         placeholder="닉네임을 입력해주세요"
                         borderRadius={BORDER_RADIUS_1}
                         borderColor={colors.green.ewha}
@@ -82,12 +81,11 @@ export default function SignUpForm() {
                         onClick={handleNickName}
                         size="small"
                     />
-                </NickNameWrapper>
-                <EmailWrapper>
+                </StInputWrapper>
+                <StInputWrapper>
                     <p>이메일</p>
                     <Input
                         type="email"
-                        id="email"
                         placeholder="ewhaclub@ewhain.net"
                         borderRadius={BORDER_RADIUS_1}
                         borderColor={colors.green.ewha}
@@ -104,19 +102,18 @@ export default function SignUpForm() {
                         onClick={handleEmail}
                         size="small"
                     />
-                </EmailWrapper>
-                <PasswordWrapper>
+                </StInputWrapper>
+                <StInputWrapper>
                     <p>비밀번호</p>
                     <Input
                         type="password"
-                        id="password"
                         placeholder="비밀번호를 입력해주세요"
                         borderRadius={BORDER_RADIUS_1}
                         borderColor={colors.green.ewha}
                         size="medium"
                         {...password}
                     />
-                </PasswordWrapper>
+                </StInputWrapper>
             </StFormContainer>
 
             <DuplicateCheckBtn
@@ -132,18 +129,23 @@ export default function SignUpForm() {
     );
 }
 
-const StFormSection = styled.main``;
+const StFormSection = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
 
 const StFormContainer = styled.div``;
 
-const NickNameWrapper = styled.div`
+const StInputWrapper = styled.div`
     display: flex;
-`;
-
-const EmailWrapper = styled.div`
-    display: flex;
-`;
-
-const PasswordWrapper = styled.div`
-    display: flex;
+    align-items: center;
+    gap: 5rem;
+    p {
+        width: 5.8rem;
+        color: ${colors.green.ewha};
+        font-weight: ${fonts.weight.bold};
+        font-size: ${fonts.size.regular};
+        margin-right: 3.4rem;
+    }
 `;
