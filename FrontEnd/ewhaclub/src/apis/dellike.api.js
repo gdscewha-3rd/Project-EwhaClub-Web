@@ -2,15 +2,16 @@ import { serverAxios } from "./index";
 
 const PREFIX_URL = "/like";
 
-export const getlikes = async (token) => {
-  console.log("종아요 api 요청", token);
+export const dellike = async (token, id) => {
+  console.log("종아요 삭제 api 요청", token);
   try {
-    const response = await serverAxios.get(`${PREFIX_URL}`, {
+    const response = await serverAxios.delete(`${PREFIX_URL}/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
-        /* "Content-Type": "application/json",*/
       },
+      data: {},
     });
+    console.log(response);
     return response;
   } catch (err) {
     return err;

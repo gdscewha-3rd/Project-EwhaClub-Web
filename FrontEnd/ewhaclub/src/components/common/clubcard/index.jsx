@@ -20,22 +20,31 @@ import {
   State,
   LikesImg,
 } from "./style";
-import { HeartIcon } from "asset/icons";
+import { HeartIcon, EmptyHeart } from "asset/icons";
 import { categories } from "constants/categories";
 import { state } from "constants/state";
 import { postlike } from "apis/postlike.api";
-import { useAuth } from "utils/auth";
 import { Link } from "react-router-dom";
+import { Islikes } from "utils/islikes";
+import { dellike } from "apis/dellike.api";
+import useAuth from "hooks/useAuth";
+
 const Clubcard = ({ club }) => {
-  //console.log(club);
-  const { auth, getLikes } = useAuth();
-  const makelike = async () => {
+  const { auth, updateLikes, likes } = useAuth();
+  console.log(likes ? "HeartIcon" : "HeartEmptyIcon");
+
+  const makeLike = async () => {
     console.log("좋아요 누르기", club.id);
-    if (auth.token) {
-      const response = await postlike(auth.token, club.id);
-      console.log(response);
-      getLikes(auth.token);
-    }
+    const response = await postlike(auth.token, club.id);
+    console.log(response);
+    updateLikes(auth.token);
+  };
+
+  const delLike = async () => {
+    console.log("삭제");
+    const response = await dellike(auth.token, club.id);
+    console.log(response);
+    updateLikes(auth.token);
   };
   return (
     <StyledRoot>
@@ -63,11 +72,11 @@ const Clubcard = ({ club }) => {
           </State>
         </InfoWrap>
 
-        <LikesWrap onClick={makelike}>
-          <LikesImg src={HeartIcon} />
-
-          {/*<LikesCnt>65</LikesCnt>*/}
-        </LikesWrap>
+        {auth.token && (
+          <LikesWrap onClick={Islikes(club.id) ? delLike : makeLike}>
+            <LikesImg src={Islikes(club.id) ? HeartIcon : EmptyHeart} />
+          </LikesWrap>
+        )}
       </SubContainer>
     </StyledRoot>
   );

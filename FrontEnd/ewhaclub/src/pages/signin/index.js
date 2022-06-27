@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { LogoIcon } from "asset/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import useInput from "hooks/useInput";
 import Input from "components/common/input";
@@ -9,9 +9,9 @@ import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 import { IsEwha } from "utils/validation";
 import ErrorDescritption from "components/error/errorDescription";
 import { SignIn } from "apis/signin.api";
-import { useAuth } from "utils/auth";
-import Likes from "pages/likes";
+import { encrypt } from "utils/CryptoJS";
 import Loading from "components/common/loading";
+import useAuth from "hooks/useAuth";
 
 const Login = () => {
   const email = useInput();
@@ -20,7 +20,11 @@ const Login = () => {
   const [error, setError] = useState({ email: "", password: "" });
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
-  const { auth, login } = useAuth();
+  const { setAuth, updateLikes } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  //console.log(location);
+  const from = location.state?.from?.pathname || "/";
 
   const checkError = () => {
     let _errorEmail = "";
@@ -45,8 +49,13 @@ const Login = () => {
       };
       const response = await SignIn(form);
       if (response) {
-        console.log("토큰 발급", response);
-        login(response, form.email.split("@")[0]);
+        const encodedToken = encrypt(response, "token");
+        localStorage.setItem("token", encodedToken);
+        //console.log("토큰 발급", encrypt(response, "token"));
+        setAuth({
+          token: response,
+        });
+        updateLikes(response);
       } else {
         throw Error("존재하지 않는 계정입니다!!");
       }
@@ -56,6 +65,8 @@ const Login = () => {
     } finally {
       //로딩 끝내기
       setLoading(false);
+      console.log("로딩 끝내기", from);
+      navigate(from, { replace: true });
     }
   };
 

@@ -34,8 +34,8 @@ const Result = () => {
   return (
     <>
       {" "}
-      <Navbar />
       <StyledRoot>
+        <Navbar />
         <Link to="/">
           <img src={LogoIcon} alt="logo"></img>
         </Link>

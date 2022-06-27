@@ -23,7 +23,7 @@ function Main() {
         ? await getAllClub()
         : await getCategoryClub(category);
     setData(data);
-    setLoading(false);
+
     console.log(data);
   };
 
@@ -31,6 +31,7 @@ function Main() {
     if (category) {
       setLoading(true);
       getClubs();
+      setLoading(false);
     }
   }, [category]);
 
