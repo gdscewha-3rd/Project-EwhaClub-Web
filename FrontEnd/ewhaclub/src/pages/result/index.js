@@ -5,13 +5,14 @@ import SearchInput from "components/common/searchinput";
 import Error from "components/error";
 import styled from "styled-components";
 import { LogoIcon } from "asset/icons";
-import { fonts } from "styles/styleObj";
+import { fonts, colors } from "styles/styleObj";
 import { getSearchData } from "apis/search.api";
 import { applyMediaQuery } from "styles/mediaQuery";
 import ClubcardList from "components/common/clubcardList";
 import Navbar from "components/navbar";
 import { useParams } from "react-router-dom";
 import Loading from "components/common/loading";
+import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 
 const Result = () => {
   const { name } = useParams();
@@ -57,6 +58,14 @@ const Result = () => {
                   </Text>
                 </SearchInfo>
                 <ClubcardList data={data} />
+                <Link to={`/`}>
+                  <DuplicateCheckBtn
+                    title="Main"
+                    fontColor={colors.black}
+                    backgroundColor={colors.yellow.origin}
+                    size="large"
+                  />
+                </Link>
               </>
             )}
           </>

@@ -1,7 +1,12 @@
-import { Acorn } from "./style";
+import { Acorn, StyledRoot } from "./style";
 import { AcornIcon } from "asset/icons";
 const Loading = () => {
-  return <Acorn src={AcornIcon}></Acorn>;
+  return (
+    <StyledRoot>
+      {" "}
+      <Acorn src={AcornIcon}></Acorn>
+    </StyledRoot>
+  );
 };
 
 export default Loading;

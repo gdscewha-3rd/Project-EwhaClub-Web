@@ -150,7 +150,7 @@ export default Login;
 
 const StyledRoot = styled.div`
   font-family: MinSans-Medium;
-  padding: 12.8rem 0;
+  padding: 10rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import useAuth from "hooks/useAuth";
 import { fonts, colors } from "styles/styleObj";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 const Navbar = () => {
   const { auth, logout } = useAuth();
@@ -54,5 +55,9 @@ const StyledRoot = styled.div`
     &:hover {
       color: ${colors.green.origin};
     }
+  }
+
+  ${applyMediaQuery("mobile")} {
+    padding-right: 3rem;
   }
 `;

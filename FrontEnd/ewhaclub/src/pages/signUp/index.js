@@ -20,5 +20,5 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem 0;
+  padding: 10rem 0;
 `;

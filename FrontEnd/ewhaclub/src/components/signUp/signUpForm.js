@@ -8,6 +8,7 @@ import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 import { Link, useNavigate } from "react-router-dom";
 import { IsEwha } from "utils/validation";
 import AuthError from "components/error/auth";
+import { applyMediaQuery } from "styles/mediaQuery";
 
 export default function SignUpForm() {
   const nickName = useInput();
@@ -19,6 +20,7 @@ export default function SignUpForm() {
   const [disabled, setDisabled] = useState(true);
   const [nickNameDisabled, setNickNameDisabled] = useState(false);
   const [emailDisabled, setEmailDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleNickName = async () => {
     const form = { checkName: nickName.value };
@@ -48,6 +50,7 @@ export default function SignUpForm() {
   };
 
   const signUp = async () => {
+    setLoading(true);
     const form = {
       email: email.value,
       password: password.value,
@@ -55,8 +58,12 @@ export default function SignUpForm() {
     };
     const response = await postSignUp(form);
     if (response === "sign-up success") {
+      setLoading(false);
       navigate("/login");
-    } else alert("회원가입 오류 발생");
+    } else {
+      setLoading(false);
+      alert("회원가입 오류 발생");
+    }
   };
 
   useEffect(() => {

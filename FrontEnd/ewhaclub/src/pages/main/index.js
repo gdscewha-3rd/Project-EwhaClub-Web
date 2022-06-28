@@ -18,20 +18,20 @@ function Main() {
   const [loading, setLoading] = useState(false);
 
   const getClubs = async () => {
+    setLoading(true);
     const { data } =
       category === "clubs"
         ? await getAllClub()
         : await getCategoryClub(category);
     setData(data);
+    setLoading(false);
 
     console.log(data);
   };
 
   useEffect(() => {
     if (category) {
-      setLoading(true);
       getClubs();
-      setLoading(false);
     }
   }, [category]);
 
@@ -61,5 +61,5 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem;
+  padding: 10rem 12.8rem;
 `;

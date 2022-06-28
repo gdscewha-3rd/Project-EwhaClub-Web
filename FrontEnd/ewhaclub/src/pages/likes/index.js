@@ -15,9 +15,10 @@ const Likes = () => {
   const { likes } = useAuth();
   console.log(likes);
   const [data, setData] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
+    setloading(true);
     setData(likes);
     setloading(false);
   }, [likes]);
@@ -38,9 +39,7 @@ const Likes = () => {
           size="medium"
           disabled
         />
-        {loading && <Loading />}
-
-        {!loading && data && <ClubcardList data={data} />}
+        {loading ? <Loading /> : <ClubcardList data={data} />}
 
         <Link to={`/`}>
           <Button
