@@ -2,6 +2,7 @@ import { LogoIcon } from "asset/icons";
 import SignUpForm from "components/signUp/signUpForm";
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
