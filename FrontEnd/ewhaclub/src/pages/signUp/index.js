@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function SignUp() {
+
   return (
     <StyledRoot>
       <Link to={`/`}>
@@ -13,6 +14,7 @@ function SignUp() {
       <SignUpForm />
     </StyledRoot>
   );
+
 }
 
 export default SignUp;
