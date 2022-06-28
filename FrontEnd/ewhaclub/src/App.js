@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Route, Routes } from "react-router-dom";
 import Main from "pages/main";
 import Detail from "pages/detail";
@@ -8,6 +9,7 @@ import Login from "pages/signin";
 import Likes from "pages/likes";
 import { AuthProvider } from "context/auth";
 import RequiredAuth from "utils/requiredAuth";
+
 
 function AppRouter() {
   return (

@@ -12,7 +12,9 @@ const Detail = () => {
       <Link to="/">
         <img src={LogoIcon} alt="logo"></img>
       </Link>
+
       <ClubDetail id={id} />
+
     </StyledRoot>
   );
 };
