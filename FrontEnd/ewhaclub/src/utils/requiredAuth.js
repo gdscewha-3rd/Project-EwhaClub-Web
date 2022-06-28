@@ -1,14 +1,13 @@
-import { useAuth } from "./auth";
-import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import { useLocation, Outlet, Navigate } from "react-router-dom";
 
-export const RequiredAuth = ({ children }) => {
-    const { auth } = useAuth();
-    const history = useNavigate();
-
-    //console.log(auth);
-
-    if (!auth.token) {
-        history.push("/login");
-    }
-    return children;
+export const RequiredAuth = () => {
+  const location = useLocation();
+  return localStorage.getItem("token") ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" state={{ from: location }} replace />
+  );
 };
+
+export default RequiredAuth;

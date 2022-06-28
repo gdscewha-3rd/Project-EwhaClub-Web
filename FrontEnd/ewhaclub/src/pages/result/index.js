@@ -1,53 +1,73 @@
 import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-
 import SearchInput from "components/common/searchinput";
 import Error from "components/error";
 import styled from "styled-components";
 import { LogoIcon } from "asset/icons";
-import { fonts } from "styles/styleObj";
+import { fonts, colors } from "styles/styleObj";
 import { getSearchData } from "apis/search.api";
 import { applyMediaQuery } from "styles/mediaQuery";
 import ClubcardList from "components/common/clubcardList";
 import Navbar from "components/navbar";
+import { useParams } from "react-router-dom";
+import Loading from "components/common/loading";
+import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 
-const Result = ({ match }) => {
-  //console.log("search result", match.params.name);
-  const query = match.params.name;
+const Result = () => {
+  const { name } = useParams();
+  const [loading, setLoading] = useState(false);
+  console.log("search result", name);
+
   const [data, setData] = useState([]);
   const getSearch = async () => {
-    const { data } = await getSearchData(query);
+    const { data } = await getSearchData(name);
     setData(data);
+    setLoading(false);
   };
   useEffect(() => {
-    if (query) {
+    if (name) {
+      setLoading(true);
       getSearch();
     }
-  }, [query]);
+  }, [name]);
 
   return (
     <>
       {" "}
-      <Navbar />
       <StyledRoot>
+        <Navbar />
         <Link to="/">
           <img src={LogoIcon} alt="logo"></img>
         </Link>
-
-        {data.length === 0 ? (
-          <Error />
-        ) : (
+        {loading && <Loading />}
+        {!loading && data && (
           <>
-            <SearchInput />
-            <SearchInfo>
-              <Text weight={`${fonts.weight.bold}`}>'{query}'</Text>
-              <Text weight={`${fonts.weight.regular}`}>&nbsp;검색결과 :</Text>
-              <Text weight={`${fonts.weight.regular}`}>
-                &nbsp;{data.length}개
-              </Text>
-            </SearchInfo>
-            <ClubcardList data={data} />
+            {data.length === 0 ? (
+              <Error />
+            ) : (
+              <>
+                <SearchInput />
+                <SearchInfo>
+                  <Text weight={`${fonts.weight.bold}`}>'{name}'</Text>
+                  <Text weight={`${fonts.weight.regular}`}>
+                    &nbsp;검색결과 :
+                  </Text>
+                  <Text weight={`${fonts.weight.regular}`}>
+                    &nbsp;{data.length}개
+                  </Text>
+                </SearchInfo>
+                <ClubcardList data={data} />
+                <Link to={`/`}>
+                  <DuplicateCheckBtn
+                    title="Main"
+                    fontColor={colors.black}
+                    backgroundColor={colors.yellow.origin}
+                    size="large"
+                  />
+                </Link>
+              </>
+            )}
           </>
         )}
       </StyledRoot>
@@ -63,7 +83,7 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem;
+  padding: 10rem 12.8rem;
 `;
 
 const SearchInfo = styled.div`

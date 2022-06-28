@@ -15,16 +15,28 @@ const DetailInfo = ({ club }) => {
         <SectionTitle>모집</SectionTitle>
         <SectionDesc>
           <div>
-            <strong>모집 기한:</strong>
-            {club.recruit_start} ~ {club.recruit_end}
+            {club.recruit_start && club.recruit_end && (
+              <>
+                <strong>모집 기한 :</strong>
+                {club.recruit_start} ~ {club.recruit_end}
+              </>
+            )}
           </div>
           <div>
-            <strong>모집 요건:</strong>
-            {club.recruit_requirement}
+            {club.recruit_requirement && (
+              <>
+                <strong>모집 요건:</strong>
+                {club.recruit_requirement}
+              </>
+            )}
           </div>
           <div>
-            <strong>지원 방법:</strong>
-            {club.how_to_apply}
+            {club.how_to_apply && (
+              <>
+                <strong>지원 방법:</strong>
+                {club.how_to_apply}
+              </>
+            )}
           </div>
         </SectionDesc>
       </section>
