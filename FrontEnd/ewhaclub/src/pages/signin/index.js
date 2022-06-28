@@ -7,11 +7,11 @@ import Input from "components/common/input";
 import { BORDER_RADIUS_1, colors, fonts } from "styles/styleObj";
 import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 import { IsEwha } from "utils/validation";
-import ErrorDescritption from "components/error/errorDescription";
 import { SignIn } from "apis/signin.api";
 import { encrypt } from "utils/CryptoJS";
 import Loading from "components/common/loading";
 import useAuth from "hooks/useAuth";
+import AuthError from "components/error/auth";
 
 const Login = () => {
   const email = useInput();
@@ -94,28 +94,34 @@ const Login = () => {
       {loading && <Loading />}
 
       {!loading && (
-        <>
-          <Input
-            type="text"
-            id="email"
-            placeholder="ewhaclub@ewhain.net"
-            borderRadius={BORDER_RADIUS_1}
-            borderColor={colors.green.ewha}
-            size="medium"
-            {...email}
-          />
-          {error.email ? <ErrorDescritption text={error.email} /> : null}
-          <Input
-            type="text"
-            id="password"
-            placeholder="ewhaclub"
-            borderRadius={BORDER_RADIUS_1}
-            borderColor={colors.green.ewha}
-            color={colors.green.ewha}
-            size="medium"
-            {...password}
-          />
-          {error.password ? <ErrorDescritption text={error.password} /> : null}
+        <LoginForm>
+          <div>
+            <Input
+              type="text"
+              id="email"
+              placeholder="ewhaclub@ewhain.net"
+              borderRadius={BORDER_RADIUS_1}
+              borderColor={colors.green.ewha}
+              size="medium"
+              {...email}
+            />
+            {error.email ? <AuthError text={error.email} /> : null}
+          </div>
+
+          <div>
+            <Input
+              type="text"
+              id="password"
+              placeholder="ewhaclub"
+              borderRadius={BORDER_RADIUS_1}
+              borderColor={colors.green.ewha}
+              color={colors.green.ewha}
+              size="medium"
+              {...password}
+            />
+            {error.password ? <AuthError text={error.password} /> : null}
+          </div>
+
           <DuplicateCheckBtn
             title="로그인"
             fontColor={colors.black.light_grey_3}
@@ -134,7 +140,7 @@ const Login = () => {
               size="medium"
             />
           </Link>
-        </>
+        </LoginForm>
       )}
     </StyledRoot>
   );
@@ -144,9 +150,17 @@ export default Login;
 
 const StyledRoot = styled.div`
   font-family: MinSans-Medium;
+  padding: 12.8rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem 0;
+`;
+
+const LoginForm = styled.div`
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

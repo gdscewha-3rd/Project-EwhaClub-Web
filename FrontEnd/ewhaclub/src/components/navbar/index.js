@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import useAuth from "hooks/useAuth";
+import { fonts, colors } from "styles/styleObj";
 
 const Navbar = () => {
   const { auth, logout } = useAuth();
@@ -38,9 +39,20 @@ export default Navbar;
 
 const StyledRoot = styled.div`
   font-family: MinSans-Medium;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0.8rem;
+  position: absolute;
+  right: 0em;
+  top: 0em;
+  padding-top: 1.5rem;
+  padding-right: 12.8rem;
+
+  span {
+    font-size: ${fonts.size.small};
+    font-weight: ${fonts.weight.medium};
+    padding: 0 0.5rem;
+    color: ${colors.green.ewha};
+    cursor: pointer;
+    &:hover {
+      color: ${colors.green.origin};
+    }
+  }
 `;
