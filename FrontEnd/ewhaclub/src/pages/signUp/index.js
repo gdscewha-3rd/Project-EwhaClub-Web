@@ -7,7 +7,9 @@ import styled from "styled-components";
 function SignUp() {
     return (
         <StyledRoot>
-            <img src={LogoIcon} alt="logo" />
+            <Link to={`/`}>
+                <img src={LogoIcon} alt="logo" />
+            </Link>
             <SignUpForm />
         </StyledRoot>
     );
