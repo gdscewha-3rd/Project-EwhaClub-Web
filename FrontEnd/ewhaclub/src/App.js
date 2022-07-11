@@ -1,16 +1,31 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Main from "pages/main/index";
-import Detail from "pages/detail/index";
-import Result from "pages/result/index";
+
+import { Route, Routes } from "react-router-dom";
+import Main from "pages/main";
+import Detail from "pages/detail";
+import Result from "pages/result";
+import SignUp from "pages/signUp";
+import Login from "pages/signin";
+import Likes from "pages/likes";
+import { AuthProvider } from "context/auth";
+import RequiredAuth from "utils/requiredAuth";
+
 
 function AppRouter() {
   return (
-    <Switch>
-      <Route exact path="/" component={Main} />
-      <Route path="/club" component={Detail} />
-      <Route path="/search" component={Result} />
-    </Switch>
+    <AuthProvider>
+      <Routes>
+        <Route element={<RequiredAuth />}>
+          <Route path="/likes" element={<Likes />} />
+        </Route>
+        <Route path="/club/:id" element={<Detail />} />
+        <Route path="/search/:name" element={<Result />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path={"/category/:category"} element={<Main />} />
+        <Route path={"/"} element={<Main />} exact="true" />
+      </Routes>
+    </AuthProvider>
   );
 }
 

@@ -1,87 +1,103 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Clubcard from "components/clubcard/index";
-import SearchInput from "components/searchinput";
-import logo from "asset/icons/logo.png";
-import dummy from "db/data.json";
-import { fonts } from "styles/styleObj";
-import { useLocation } from "react-router-dom";
-import QueryString from "qs";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
+import SearchInput from "components/common/searchinput";
+import Error from "components/error";
+import styled from "styled-components";
+import { LogoIcon } from "asset/icons";
+import { fonts, colors } from "styles/styleObj";
+import { getSearchData } from "apis/search.api";
+import { applyMediaQuery } from "styles/mediaQuery";
+import ClubcardList from "components/common/clubcardList";
+import Navbar from "components/navbar";
+import { useParams } from "react-router-dom";
+import Loading from "components/common/loading";
+import DuplicateCheckBtn from "components/common/duplicateCheckBtn";
 
 const Result = () => {
+  const { name } = useParams();
+  const [loading, setLoading] = useState(false);
+  console.log("search result", name);
+
   const [data, setData] = useState([]);
-  const location = useLocation();
-
-  const { name } = QueryString.parse(location.search, {
-    ignoreQueryPrefix: true,
-  });
-
-  const getclubs = async () => {
-    //const data=await axios.get("");
-    setData(dummy.data);
+  const getSearch = async () => {
+    const { data } = await getSearchData(name);
+    setData(data);
+    setLoading(false);
   };
-
   useEffect(() => {
-    getclubs();
-  }, []);
+    if (name) {
+      setLoading(true);
+      getSearch();
+    }
+  }, [name]);
 
   return (
     <>
-      <Section>
+      {" "}
+      <StyledRoot>
+        <Navbar />
         <Link to="/">
-          <img src={logo} alt="logo"></img>
+          <img src={LogoIcon} alt="logo"></img>
         </Link>
-
-        <SearchInput />
-        <SearchInfo>
-          <Text weight={`${fonts.weight.bold}`}>'{name}'</Text>
-          <Text weight={`${fonts.weight.regular}`}>&nbsp;검색결과 :</Text>
-          <Text weight={`${fonts.weight.regular}`}>
-            &nbsp;{dummy.data.length}개
-          </Text>
-        </SearchInfo>
-        {data && (
-          <List>
-            {data.map((club, idx) => (
+        {loading && <Loading />}
+        {!loading && data && (
+          <>
+            {data.length === 0 ? (
+              <Error />
+            ) : (
               <>
-                <Link to={`/club?id=${club.id}`}>
-                  {<Clubcard key={idx} club={club} />}
+                <SearchInput />
+                <SearchInfo>
+                  <Text weight={`${fonts.weight.bold}`}>'{name}'</Text>
+                  <Text weight={`${fonts.weight.regular}`}>
+                    &nbsp;검색결과 :
+                  </Text>
+                  <Text weight={`${fonts.weight.regular}`}>
+                    &nbsp;{data.length}개
+                  </Text>
+                </SearchInfo>
+                <ClubcardList data={data} />
+                <Link to={`/`}>
+                  <DuplicateCheckBtn
+                    title="Main"
+                    fontColor={colors.black}
+                    backgroundColor={colors.yellow.origin}
+                    size="large"
+                  />
                 </Link>
               </>
-            ))}
-          </List>
+            )}
+          </>
         )}
-      </Section>
+      </StyledRoot>
     </>
   );
 };
 
 export default Result;
 
-const Section = styled.div`
+const StyledRoot = styled.div`
+  font-family: MinSans-Medium;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 128px;
-`;
-
-const List = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  row-gap: 64px;
-  column-gap: 45px;
+  padding: 10rem 12.8rem;
 `;
 
 const SearchInfo = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 35px;
+  padding-bottom: 3.5rem;
+  ${applyMediaQuery("mobile")} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Text = styled.span`
   font-weight: ${(props) => props.weight};
+  font-size: ${fonts.size.medium};
 `;

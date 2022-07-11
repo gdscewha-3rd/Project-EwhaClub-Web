@@ -1,17 +1,20 @@
-import logo from "asset/icons/logo.png";
+import { LogoIcon } from "asset/icons";
 import ClubDetail from "components/detail";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { applyMediaQuery } from "styles/mediaQuery";
-
+import { useParams } from "react-router-dom";
 // 선택한 동아리의 data를 어떻게 들고오지?
 const Detail = () => {
+  const { id } = useParams();
   return (
     <StyledRoot>
       <Link to="/">
-        <img src={logo} alt="logo"></img>
+        <img src={LogoIcon} alt="logo"></img>
       </Link>
-      <ClubDetail />
+
+      <ClubDetail id={id} />
+
     </StyledRoot>
   );
 };
@@ -23,7 +26,7 @@ const StyledRoot = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12.8rem;
+  padding: 10rem;
   font-family: "MinSans-Medium";
   ${applyMediaQuery("mobile")} {
     margin-top: -5rem;
