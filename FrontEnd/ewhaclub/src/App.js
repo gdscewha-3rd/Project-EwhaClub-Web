@@ -23,6 +23,7 @@ function AppRouter() {
         <Route path={"/category/:category"} element={<Main />} />
         <Route path={"/"} element={<Main />} exact="true" />
       </Routes>
+      {/**/}
     </AuthProvider>
   );
 }
