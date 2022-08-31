@@ -1,20 +1,16 @@
-# Project-EwhaClubWebsite
+# 벗동소 : 벗들의 동아리를 소개합니다!
 
-## 기술 스택
-React, Springboot, MySQL(AWS RDS), JPA, Lombok, Nginx, AWS EC2 & CodeDeploy & S3 
- 
-## 주제
-이화여대 동아리를 한 눈에 볼 수 있는 웹사이트 개발
-
-## 프로젝트 일정
-### 3-4월
-- [x] 기획
-- [ ] 동아리 데이터 수집 (진행 중)
-### 5월
-- [x] 프론트엔드 퍼블리싱
-- [x] 백엔드 연결
-- [x] 1차 배포
-### 6월 
-- [ ] 프론트엔드 퍼블리싱
-- [ ] 백엔드 연결
-- [ ] 2차 배포
+![0001](https://user-images.githubusercontent.com/67853616/187698264-032d6822-a365-4a56-8ce8-ac1e17c2748c.jpg)
+![0002](https://user-images.githubusercontent.com/67853616/187698276-8b1a82a8-207a-4d18-876e-39a7ec061aa9.jpg)
+![0003](https://user-images.githubusercontent.com/67853616/187698281-6e95c3cf-e90b-431d-a3aa-2017f99e2d05.jpg)
+![0004](https://user-images.githubusercontent.com/67853616/187698287-56a9c0c8-2272-443e-8d6e-4caa7aead96b.jpg)
+![0005](https://user-images.githubusercontent.com/67853616/187698290-1b677244-8078-4f17-a15b-5c15bb2cafa3.jpg)
+![0006](https://user-images.githubusercontent.com/67853616/187698293-c3269852-25f2-4bfe-bcf5-ea4f939a5894.jpg)
+![0007](https://user-images.githubusercontent.com/67853616/187698297-af82ab0f-c7d0-46d3-a725-5f93cbbb4c1b.jpg)
+![0008](https://user-images.githubusercontent.com/67853616/187698300-8cd3f23b-6968-49c0-87ad-23ee8731bc93.jpg)
+![0009](https://user-images.githubusercontent.com/67853616/187698305-b547b1a2-4ac7-46fc-babb-38a3a1daefef.jpg)
+![0010](https://user-images.githubusercontent.com/67853616/187698313-ed1a7f34-65a3-4bd2-a131-c65754c664da.jpg)
+![0011](https://user-images.githubusercontent.com/67853616/187698316-7e1921aa-5eab-47f8-b281-73859a657276.jpg)
+![0012](https://user-images.githubusercontent.com/67853616/187698320-25a62c50-0cef-4bcc-92be-3c2264e3205f.jpg)
+![0013](https://user-images.githubusercontent.com/67853616/187698324-054b1fce-92c8-48b6-86a1-62c5b05c879f.jpg)
+![0014](https://user-images.githubusercontent.com/67853616/187698325-138ce63f-dbb1-4904-ab7f-b6b3f3fe9fb1.jpg)
